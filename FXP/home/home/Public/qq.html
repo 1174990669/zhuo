@@ -1,0 +1,25 @@
+<link href="__STYLE__/home/qq/lanrenzhijia.css" rel="stylesheet" type="text/css" />
+<script src="__STYLE__/home/qq/jquery.hhService.js"></script>
+<script>$(function(){$("#hhService").fix({float:'right',minStatue:false,skin:'green',durationTime:1000})});</script>
+<!-- 代码 开始 -->
+<style type="text/css">
+.side_center p{ line-height:18px; text-align:center;}
+</style>
+<div class="scrollsidebar" id="hhService">
+  <div class="side_content">
+    <div class="side_list">
+      <div class="side_title"> <a title="隐藏" class="close_btn"><span>关闭</span></a></div>
+      <div class="side_center">
+        <div class="qqserver">
+        在线咨询：
+   <volist name="customer_list" id="vo">
+           <p> <a title="{:$v[name]}" href="http://wpa.qq.com/msgrd?v=3&uin={$vo.qqnum}&site=qq&menu=yes" target="_blank"> <img src="http://wpa.qq.com/pa?p=1:{$vo.qqnum}:16">{$vo.name}</a></p>
+      </volist>
+        </div>       
+      </div>
+      <div class="side_bottom"> </div>
+    </div>
+  </div>
+  <div class="show_btn"><span>在线客服</span></div>
+</div>
+<!-- 代码 结束 --> 

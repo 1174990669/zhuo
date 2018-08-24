@@ -1,0 +1,246 @@
+<include file="Public:header" />
+    <section class="section_one">
+        <div id="swiper1" class="swiper-container swi_img">
+            <div class="swiper-wrapper">
+            <volist name="banner_list" id="v">
+                <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.src_img}" alt="{$v.title}"></a></div>
+            </volist>
+            </div>
+            <div id="pagination1" class="swiper-pagination"></div>
+        </div>
+ 
+        
+        <div class="container-fluid top_24">
+            <div class="container">
+              
+                {:C('WEB_SHOU')}
+            </div>
+        </div>
+        <div class="container-fluid top_24 back_f4">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="column content">
+                     <!--    <h3>PRODUCT display</h3> -->
+                        <h3 class="pad_no">-  PRODUCT display  -</h3>  
+                    </div>
+                </div>
+                <div class="div_jie">
+                    <ul class="ul_text">
+                        <li>
+                        <a href="javascript:;">By product classification</a>
+                        <volist name="product_class" id="v">
+                            <a href="{$v.url}">{$v.name}</a>
+                        </volist>
+                            <a href="/en/products.html">More&nbsp;></a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">Classification by industry</a>
+                        <volist name="hangye" id="v">
+                            <a href="{:U('/products',array('hid'=>$v['id']))}">{$v.name}</a>
+                        </volist>
+                            <a href="/en/products.html">More&nbsp;></a>
+                        </li>
+                        <li class="act">
+                            <a href="javascript:;">Classification by size</a>
+                            <volist name="chicun" id="v">
+                            <a href="{:U('/products',array('cid'=>$v['id']))}">{$v.name}</a>
+                        </volist>
+                            <a href="/en/products.html">More&nbsp;></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row pad_20">
+                <volist name="product_list" id="v">
+                    <div class="col-xs-3 col-md-3">
+                        <div class="width_1">
+                            <a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}" title="{$v.name}"></a>
+                        </div>
+                        <div class="div_solid"  alt="{$v.name}" title="{$v.name}">{:msubstrge($v['name'],0,27,'utf-8')}</div>
+                    </div>
+                </volist>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec_two">
+        <div class="container-fluid back_url">
+            <div class="container">
+                <div class="row clearfix title">
+                    <div class="column content">
+                        <h3 class="text-center">Product effect display</h3>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-md-12 column">
+                        <div style="height:395px;overflow: hidden;" class="tabbable" id="tabs-869405">
+                            <ul id="Ul_li" class="nav nav-tabs">
+                            <volist name="tese_class" id="v">
+                                <li id="li_a{$i}" <if condition="$key eq 0">class="active"</if>>
+                                     <a href="#" data-toggle="tab">{$v.name}</a>
+                                </li>
+                               </volist>
+                                <li id="li_a1">
+                                     <a href="/en/display.html">More</a>
+                                </li>
+                            </ul>
+                            <div id="tab_content" class="tab-content">
+                            <volist name="tese_class" id="vo">
+                                <div class="tab-pane active" >
+                                    <div id="swiper5" class="swiper05 swiper-container">
+                                        <ul class="swiper-wrapper ul_img">
+                                        <volist name="vo.list" id="v">
+                                            <li class="swiper-slide">
+                                                <div>
+                                                    <img src="{$v.list_img}" alt="">
+                                                    <p class="p_top">{$v.name}</p>
+                                                </div>
+                                                <p><a href="{$v.url}">Understand the details</a></p>
+                                            </li>
+                                          </volist>
+                                        </ul>
+                                        <div class="sw_width swiper-button-next left_img1"></div>
+                                        <div class="sw_width swiper-button-prev right_img1"></div>
+                                    </div>
+
+                                </div>
+                              </volist>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec_thre">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row clearfix title">
+                    <div class="column content">
+                       <!--  <h3 class="text-center h_pad_top">Go into XIANNENG</h3> -->
+                        <h3 class="text-center">-  INTO XIANNENG  -</h3>
+                    </div>
+                </div>
+                <div class="row clearfix swiper">
+                    <div class="col-xs-5 col-md-5 column">
+                        <div class="d_border">
+                            <div id="swiper3" class="swiper-container swi_img">
+                                <div class="swiper-wrapper">
+                                <volist name="about.img_list" id="v">
+                                    <div class="swiper-slide"><img src="{$v.src_img}" alt="#"></div>
+                                  </volist>
+                                </div>
+                                <div class="swiper-pagination pull-right"></div>
+                            </div>
+                            <p>Learn more about XIANNENG information<span>></span></p>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-md-7 column">
+                        {$about.sub_content}
+                    </div>
+                </div>
+                <div class="Corporate">
+                    <p><img src="__STYLE__/home/images/icon/fc.png" alt="#">Corporate Style<!-- <a href="#">更多></a> --></p>
+                </div>
+                    <div id="swiper4" class="swiper-container">
+                    <div class="swiper-wrapper">
+                     <volist name="fengcai" id="v">
+                        <div class="swiper-slide"><img src="{$v.src_img}" alt="#"></div>
+                        </volist>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <script>
+
+        $("#Ul_li").find('li').click(function(){
+                var _index = $(this).index();
+                $("#tab_content>div").eq(_index).show().siblings().hide();
+            $(this).addClass("active").siblings().removeClass("active");
+            });
+
+
+ 
+
+        $('#li_hover').find('li').mouseover(function(){
+            console.log(1)
+            var _index = $(this).index();
+            $(".d_right .d_cli1").eq(_index).show().siblings().hide();
+            $(this).addClass("active").siblings().removeClass("active");
+            $('.d_bottom').find('.act').removeClass('active')
+            $('.ul_tit').css('display','block')
+        })
+        $('#li_hover').mouseout(function(){
+                $('#li_hover').find('li').removeClass('active')
+            })
+
+        $('.guan_img').click(function(){
+            // console.log($('.w_13').val())
+            $('.d_form').hide()
+        })
+
+
+
+        var swiper = new Swiper('#swiper1', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+      
+          var swiper = new Swiper('#swiper3', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                renderBullet: function (index, className) {
+                  return '<span class="' + className + '">' + (index + 1) + '</span>';
+                },
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+      
+        var swiper = new Swiper('#swiper4', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            freeMode: true,
+            // loop:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+
+
+
+        var swiper = new Swiper('.swiper05', {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            freeMode: true,
+            // loop:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+     
+
+    </script>
+ <include file="Public:bottom" />

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <include file="Public:meta" />
+    <link rel="stylesheet" href="__STYLE__/home/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="__STYLE__/home/css/swiper.min.css">
+    <link rel="stylesheet" href="__STYLE__/home/css/index.css" >
+    <script src="__STYLE__/home/js/jquery-3.0.0.min.js" ></script>
+    <script src="__STYLE__/home/js/swiper.min.js"></script>
+    <script src="__STYLE__/home/js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-8 col-md-8">
+                        <img class="img_log" src="{:C('LOGO_IMAGE')}" alt="#">
+                        <div class="head_div">
+                            <p>生态环保建筑材料行业领导者</p>
+                            <p>为您提供全面可靠建筑材料和装饰材料解决方案</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-4 col-md-4 pad_top_20">
+                        <img class="img_tel" src="__STYLE__/home/images/tel.png" alt="#">
+                        <p class="p_line">&nbsp;&nbsp;&nbsp;全国咨询热线:<br/><b>&nbsp;&nbsp;{:C('WEB_PHONE')}</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div_title">
+            <ul class="ul_w7">
+                <li <if condition="$top_column['id'] eq ''"> class="active"</if>><a href="/">网站首页</a></li>
+                <volist name="header_navi" id="v">
+                <li <if condition="$top_column['id'] eq $v['id']"> class="active"</if>><a href="{$v.url}">{$v.name}</a></li>
+                </volist>
+            </ul>
+        </div>
+    </header>
+    <!-- 手机版 -->
+    <div class="headerMobile container">
+        <div class="row">
+            <div class="col-xs-5">
+                <a href="">
+                    <img class="img_log" src="{:C('LOGO_IMAGE')}" alt="#">
+                </a>
+            </div>
+            <div class="col-xs-7">
+                <img src="__STYLE__/home/images/more.png" class="hmsan" id="hmsan" alt="">
+            </div>
+        </div>
+        <ul class="hmnavxl Mobilehide">
+            <li <if condition="$top_column['id'] eq ''"> class="active"</if>><a href="/">网站首页</a>
+            </li>
+            <volist name="header_navi" id="v">
+                <li <if condition="$top_column['id'] eq $v['id']"> class="active"</if>>
+                <if condition="$v['son']  eq ''"><a href="{$v.url}">{$v.name}</a><else /><a href="javascript:;" class="madsafs">{$v.name}</a></if>
+
+                    <dl class="Mobilehide">
+                        <volist name="v.son" id="vv">
+                        <dd><a href="{$vv.url}">{$vv.name}</a></dd>
+                        </volist>
+                    </dl>
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <script>
+        $("#hmsan").click(function () {
+            $(".hmnavxl").toggleClass("Mobilehide");
+        })
+        $(".hmnavxl li").click(function () {
+            $(this).siblings("li").find("dl").addClass("Mobilehide");
+            $(this).find("dl").toggleClass("Mobilehide");
+
+        })
+    </script>

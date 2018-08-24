@@ -1,0 +1,40 @@
+<include file="Public:header" />
+<div class="w1000">
+    <div class="top-nav">
+        <p>当前位置：
+            <a href="/">首页 &gt;</a>
+            <a href="{$column_info.url}.html">{$column_info.name}</a>
+            
+        </p>
+    </div>
+    <div class="content-box over">
+        <div class="content-left">
+            <div class="content-left-top">
+                <ul>
+                <volist name="navis" id="v">
+                    <li><a href="{$v.url}" <if condition="$v['id'] eq $column_info['id']">class="current"</if>>{$v.name}</a></li>
+               </volist>
+                <li><a href="{:U('Index/map')}">网站地图</a></li>
+                </ul>
+            </div>
+            <div class="content-left-bot">
+                <h4 class="contact-title">联系我们</h4>
+               <ul>
+                    {:C('WEB_LEFY')}
+                </ul>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-right-box" style="border:1px solid #f1f1f1;">
+                <div class="news-two-list">
+                    <h1>{$column_info.name}</h1>
+                </div>
+                <div class="copyinfo">
+                  
+                    {$info.content}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:bottom" />

@@ -1,0 +1,40 @@
+ <include file="Public:header" />
+		<!--拍卖展览-->
+		<div class="content_box" style="margin-bottom:0">
+			 <include file="Public:bread" />
+			<div class="page_con">
+				<div class="zl_con zl_list">
+					<dl>
+						<dt class="fl">
+							<img src="{$info.list_img}" />
+						</dt>
+						<dd class="fl">
+							<a href="">{$info.name}</a>
+							<p>拍  卖 会： {$info.auction}</p>
+							<p>预展时间： {$info.time} </p>
+							<p>展拍地点：{$info.address}</p>
+							<p class="zl_num">总拍品数：<span>{$info.count}</span>件</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="page_con">
+				<div class="jieguo_list">
+					<ul>
+					<volist name="auction_list" id="v">
+						<li>
+							<a href="{:U('Auction/details',array('id'=>$v['id']))}">
+								<img src="{$v.list_img}" title="{$v.name}" />
+								<p class="jieguo_tit"  title="{$v.name}" >{:msubstrge($v['name'],0,20,'utf-8')}</p>
+								<p>拍卖价 : <span class="color">{$v.chengjiaojia}RMB</span></p>
+							</a>
+						</li>
+						</volist>
+					</ul>
+				</div>
+				<div class="paging paging_1">
+						{$pagelist}
+				</div>
+			</div>
+		</div>
+ <include file="Public:bottom" />

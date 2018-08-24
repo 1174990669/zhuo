@@ -1,0 +1,33 @@
+<include file="Public:index_header" />
+    <div class="w100 melting" style="padding-top:0;">
+      <div class="wid1100 clear">
+        <div class="subnav">
+           <a href="/">首页</a><span>/</span>
+           <a href="/{$top_column.url}.html">将相投融</a>
+        </div>
+        <div class="melting-left fl">
+                  <div class="melting-left-news-list">
+                    <div class="melting-left-news-list-con">
+                        <ul class="melting-left-news-list-con_ul">
+                        <volist name="product_list" id="v">
+                            <li>
+                                <a href="{$v.url}">
+                                    <img src="{$v.list_img}" alt="">
+                                    <div>
+                                        <h3>{$v.name}</h3>
+                                        <p class="time"><span>{$v.create_time}</span><span>阅读({$v.click_num})</span></p>
+                                        <p class="txt" style="height: 100px;">{$v.sub_content}</p>
+                                    </div>
+                                </a>
+                            </li>
+                           </volist>
+                        </ul>
+                        <p class="pages">{$pagelist}</p>
+
+                    </div>
+                </div>
+             </div>
+        <include file="Public:right" />
+            </div>
+    </div>
+<include file="Public:bottom" />

@@ -1,0 +1,84 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__STYLE__/home/css/style.css"/> 
+<link rel="stylesheet" type="text/css" href="/Style/home/css/style1.css"/> 
+<link type="text/css" rel="stylesheet" href="/Public/validform/validate.css"/>
+<script type="text/javascript" src="/Public/validform/validform_v5.3.2.js"></script>
+<script type="text/javascript" src="/Public/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/common/jquery.submit.js"></script> 
+<script type="text/javascript" src="/Public/common/layer.func.js"></script>
+
+
+<block name="body">
+	<div class="mima_center">
+		<form action="{:U('member/forgetone')}" method="post" class="valid_form">
+			<div class="mima_main">
+				<div class="mima_fenlei">
+					<div class="mimafenl mimafenlebj01">填写账户名</div>
+					<div class="mimafenl mimafenlebj02">设置新密码</div>
+					<div class="mimafenl mimafenlebj03">完成</div>
+				</div>
+				<div class="register_shuru">
+					<div class="shuru_main">
+						<div class="shurumain_mc"><span>*</span>账户名:</div>
+						<div class="shurumain_shuru"><input class="shurutext shurutub01" name="email" type="text" placeholder="请输入您的邮箱"></div>
+					</div>
+					<div class="shuru_main">
+						<div class="shurumain_mc"><span>*</span>验证码:</div>
+						<div class="shurumain_shuru"><input type="text" name="code" class="yzfstext" placeholder="请输入短信验证码"> <input id="sendcode" type="button" value="点击获取验证码" class="yzfsbtn" style="cursor: pointer;"></div>
+					</div>
+					<div class="shuru_tijiao"><input type="submit" value="提交"></div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="clr"></div>
+	<script language="javascript">
+		$('#sendcode').click(function () {
+			send_code($(this));
+		})
+
+		function send_code(obj) {
+			target_address = $("input[name='email']").val();
+			if (!target_address) {
+				layer_error('邮箱不能为空');
+				return false;
+			}
+			obj.val('验证码发送中...');
+			$.ajax({
+				url: "{:U('Member/sendcode',array('type'=>2))}", 
+				type: 'POST', 
+				data: {'email_num': target_address},
+				success: function (data) {
+					//alert(111);
+					obj.unbind('click');
+					if (data.status == 1) {
+						time = 120;
+						msg = time + ' 秒后重新获取';
+						obj.val(msg);
+						var interval = setInterval(function () {
+							time = time - 1;
+							msg = time + ' 秒后重新获取';
+							obj.val(msg);
+							if (time <= 0) {
+								obj.click(function () {
+									send_code(obj);
+								})
+								obj.val('点击获取验证码');
+								clearInterval(interval);
+							}
+						}, 1000);
+					} else {
+						obj.click(function () {
+							send_code(obj);
+						})
+						obj.removeAttr('disable');
+						obj.val('点击获取验证码');
+						layer_error(data.info);
+					}
+				}
+			})
+
+		}
+	</script>
+</block>
+<include file="Public:bottom" />

@@ -1,0 +1,91 @@
+<div class="w100  footer">
+    <div class="wid1100 ">
+        <div class="footer-friendship">
+            <p class="footer-friendship-tie">友情链接</p>
+             <div class="footer-friendship-link">
+            <volist name="link_list" id="v">
+                <a href="{$v.url}" target="_blank">{$v.name}</a>
+            </volist>
+            </div>
+        </div>
+        <div class="footer-friendship clear">
+            <div class="clear footer-friendship-lanmu">
+                <dl class="footer-friendship-lanmu-dl">
+                    <dt>关于我们</dt>
+                    <volist name="bottom_about" id="v">
+                    <dd><a href="{$v.url}">{$v.name}</a></dd>
+                    </volist>
+                </dl>
+                <dl class="footer-friendship-lanmu-dl">
+                    <dt>投融项目</dt>
+                    <dd><a href="/zhaotouzi.html">找投资</a></dd>
+                    <dd><a href="/zhaoxiangmu.html">找项目</a></dd>
+                    <dd><a href="/shangyejihuashu.html">商业计划书</a></dd>
+                    <dd><a href="/chuangyefuwu.html">创业服务</a></dd>
+                </dl>
+                <dl class="footer-friendship-lanmu-dl">
+                    <dt>投融学院</dt>
+                <volist name="bottom_college" id="v">
+                    <dd ><a href="{$v.url}">{$v.name}</a></dd>
+                 </volist>
+
+                </dl>
+            </div>
+            <div class="clear footer-friendship-tel">
+                <dl class="footer-friendship-lanmu-dl" style="width: 220px">
+                    <dt>客服热线</dt>
+                    <dd>
+                        <div class="foot-lxfs">
+
+                        <img src="__STYLE__/home/images/foot_1.png"   alt="">
+                            <p class="foot-lxfs-top">{:C('WEB_PHONE')}</p>
+                            <p class="foot-lxfs-xia">(服务时间：{:C('WEB_TIME')})</p>
+                        </div>
+                        <a class="foot-lxfs" style="display: block" href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank">
+                            <img src="__STYLE__/home/images/foot_2.png"   alt="">
+                            <p class="foot-lxfs-top">在线咨询</p>
+                            <p class="foot-lxfs-xia">(点击联系我们)</p>
+                        </a>
+
+                    </dd>
+                </dl>
+                <dl class="footer-friendship-lanmu-dl" style="width: 220px">
+                    <dt style="border: none">关注我们</dt>
+                    <dd  style="border: none">
+                        <img src="{:C('WEB_EWM')}" class="foot-wrix" alt="">
+                        <p>微信扫一扫</p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-con">
+                <a href="." class="footer-bottom-link">网站首页  </a>
+                <volist name="bottom_navi" id="v">
+                <a href="{$v.url}" class="footer-bottom-link">{$v.name}</a>
+               </volist>
+            </div>
+            <div class="footer-bottom-con">
+                <span>{:C('WEB_ICP')}</span>
+            </div>
+            <div class="footer-bottom-con">
+                <a href=""><img src="__STYLE__/home/images/foot_3.jpg" alt=""></a>
+                <a href=""><img src="__STYLE__/home/images/foot_4.jpg" alt=""></a>
+                <a href=""><img src="__STYLE__/home/images/foot_5.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="Public:qq" />
+<script type="text/javascript"> 
+    $("#fabu").click(function(){
+        alert("请先登录后再操作！");
+    });
+     $("#fabus").click(function(){
+        alert("请先登录后再操作！");
+    });
+
+</script>
+  </body>
+</html>

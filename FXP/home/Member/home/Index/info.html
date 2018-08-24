@@ -1,0 +1,112 @@
+<include file="Public:header" />
+<div class="prod-con maxwin" style="padding-top: 0;padding-bottom: 50px">
+    <div class="win prod-c-l-a clearfix">
+        <div class="mbx-l-c">
+            <img src="__STYLE__/home/images/map.png" alt="" style="vertical-align: middle">
+            <span>当前位置 <a href="/">主页</a> 
+ 
+             &nbsp;>&nbsp; <a href="">{$info.name}</a>
+              </span>
+        </div>
+        <div class="pc-das clearfix">
+            <div class="clearfix" style="position: relative">
+                <div style="" id="blowIng"><img src="" alt=""></div>
+                <div class="pc-das-data ">
+                    <div class="data-prc-img pro-bigimag">
+                        <div class="big-div"></div>
+                        <div class="addgb"></div>
+                        <if condition="$info[img_list][0][id] eq ''">
+                        <img src="{$info.lisy_img}" id="divImg" class="prc-img" alt="">
+                        <else />
+                        <img src="{$info[img_list][0][src_img]}" id="divImg" class="prc-img" alt="">
+                        </if>
+                    </div>
+                    <ul class="imgList pro-div-uls">
+                    <volist name="info.img_list" id="v">
+                        <li <if condition="$key eq 0">class="on"</if>>
+                            <img src="{$v.src_img}" alt="">
+                        </li>
+                    </volist>
+                    </ul>
+                </div>
+                <div class="pc-das-text">
+                    <div class="pc-das-text-h">{$info.name}</div>
+                    <div class="pc-das-text-p">{$info.sub_content}</div>
+                    <div class='pc-das-text-sc clearfix' >
+                        <div>分&nbsp;&nbsp;&nbsp;&nbsp;享：
+                        <div class="bshare-custom" style="    display: inline-block;"><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+                        </div>
+          
+                    </div>
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank" class="zxzs">在线咨询</a>
+                </div>
+            </div>
+            <div class="pc-das-h2">
+                <h2 class="cpsm">产品说明</h2>
+                <div class="cpsm-xt"></div>
+                <div class="pc-das-cxqz">
+                   {$info.content}
+                </div>
+            </div>
+            <div class="beafo">
+                <a href="{$prev_info.url}"> &lt; 前一个</a><a href="{$next_info.url}">后一个 &gt; </a>
+            </div>
+            <!--<div class="comment">
+                <h2><span>用户评论</span><i><img src="__STYLE__/home/images/comm_icon.png"></i></h2>
+                <ul id="new_in">
+
+                </ul>
+                <a href="javascript:;" id="moreLink" style="display: none;">查看全部评论》</a>
+
+                <div class="comment_box1">
+                    <input type="text" placeholder="登陆评论!" name="content" required="">
+                    <input type="hidden" value="" name="member_id">
+                    <div class="fabiao">
+                        <button id="pinglun">发表评论</button>              </div>
+                </div>
+            </div>-->
+        </div>
+
+
+    </div>
+
+</div>
+<include file="Public:bottom" />
+<script>
+  
+
+    $(function(){
+        $(".pro-div-uls li").mousemove(function(){
+            var src=$(this).find("img").attr("src");
+            $("#divImg").attr("src",src);
+            return false;
+        })
+
+        $(".pro-bigimag").hover(function(){
+            $(".big-div").show();
+            var srcImg=$("#divImg").attr("src");
+            console.log(srcImg)
+            $("#blowIng").show().css("backgroundImage","url("+srcImg+")")
+            return false;
+        },function(){
+            $(".big-div").hide();
+            $("#blowIng").hide();
+            return false;
+        });
+        var box_x = $(".pro-bigimag").offset().left;
+        var box_y = $(".pro-bigimag").offset().top;
+        $(".addgb").mousemove(function(e){
+            var mou_y = e.clientY + document.body.scrollTop;
+            var mou_x = e.clientX + document.body.scrollLeft;
+            var x = box_x - mou_x;
+            var y = box_y - mou_y;
+            var s=e.offsetX-$(".big-div").width()/2;
+            var d=e.offsetY-$(".big-div").height()/2;
+            s=s<0?0:s>$(".addgb").width()-$(".big-div").width()?$(".addgb").width()-$(".big-div").width():s;
+            d=d<0?0:d>$(".addgb").height()-$(".big-div").height()?$(".addgb").height()-$(".big-div").height():d;
+            $(".big-div").css({"left":s ,"top":d});
+            $("#blowIng").css({"backgroundPosition-x":-s*0.8,"backgroundPosition-y":-d*0.8,"backgroundSize":"150% 150%"})
+            return false;
+        })
+    })
+</script>

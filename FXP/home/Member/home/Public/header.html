@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <include file="Public:meta" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="__STYLE__/home/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="__STYLE__/home/css/swiper.min.css">
+    <link rel="stylesheet" href="__STYLE__/home/css/index.css" >
+    <script src="__STYLE__/home/js/jquery-3.0.0.min.js" ></script>
+    <script src="__STYLE__/home/js/swiper.min.js"></script>
+    <script src="__STYLE__/home/js/bootstrap.min.js" ></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid bor_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-md-8">{:C('WEB_COME')}</div>
+                    <div class="col-xs-6 col-md-4"><a href="/"> 中文 </a> <a href="javascript:;"  onclick="AddFavorite()">丨Collection this station </a> <a href="/lianxixianneng.html">| Contact us</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid w_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-md-7"><img alt="140x140" src="{:C('LOGO_IMAGE')}" /></div>
+                    <div class="col-xs-6 col-md-5"><img alt="140x140" src="__STYLE__/home/images/icon.png" /><p>customer service hotline<br/><b>{:C('WEB_PHONE')}</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid back_24">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-md-12 column">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav pull-left li_click">
+                                    <li <if condition="$top_column['id'] eq ''"> id="active"</if>><a href="/en">Home</a></li>
+                                    <volist name="header_navi" id="v">
+                                    <li <if condition="$v['son'] neq ''">class="li_pos"</if> <if condition="$top_column['id'] eq $v[id]"> id="active"</if>>
+                                    <if condition="$v['son'] neq ''">
+                                     <div class="cata">
+                                     <volist name="v.son" id="vo">
+                                            <a href="{$vo.url}">{$vo.name}</a>
+                                      </volist>
+                                        </div>
+                                        </if>
+                                    <a href="{$v.url}">{$v.name}</a></li>
+                                   </volist>
+                                </ul>
+                                <form id="form" class="navbar-form navbar-left" role="search" method="post" action="{:U('Product/search')}">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input_control" placeholder="Search keywords" name="keywords" />
+                                    </div> 
+                                    <button type="submit" class="btn btn-default">St</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

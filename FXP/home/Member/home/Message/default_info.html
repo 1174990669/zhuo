@@ -1,0 +1,40 @@
+<include file="Public:header" />
+    <section class="P_section_one">
+        <include file="Public:banner" />
+        <!-- <div class="container-fluid"> -->
+        <div class="container container_img">
+            <img class="con_img" src="{$top_column.home_img}" alt="200x120" style="top:-88px;">
+            <div class="div">
+                <include file="Public:left" />
+            </div>
+            <div class="div d_right left_8">
+               <include file="Public:bread" />
+        <div class="d_cli1 div_cent">
+          <div class="row pad_20">
+              <div class="col-md-12">
+                <div id="leave" class="d_contact">
+                  <p class="title">Dear customer: Hello, your message will be sent back at the earliest possible time.</p>
+                <form action="__SELF__" method="post">
+                    <p class="form_p">Your name: <input class="no" type="text" name="name" required=""/></p>
+                    <p class="form_p">Phone number: <input class="no w_13" type="text" name="phone" required=""/></p>
+                    <p class="form_p">Mail box: <input class="no" type="text" name="email" required=""/></p>
+                    <p class="form_p pull-left">Message content:</p>
+                    <textarea class="no form_taree" name="content" required=""></textarea><br/>
+
+                    <input class="in_but button" type="submit" value="Submission" />
+                    <input id="in_null" class="in_but null" type="button" value="Heavy filling" />
+                </form>
+
+                  <div class="left">
+                  <!-- <div id="container1" class="container"></div>  百度地图-->
+                </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
+
+ <include file="Public:bottom" />

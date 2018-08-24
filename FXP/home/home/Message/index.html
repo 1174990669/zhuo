@@ -1,0 +1,68 @@
+<extend name="Public:base"/>
+<block name="body">
+<script type="text/javascript" src="__JS__/form.js"></script>
+<include file="Public:banner"/>
+
+  <div id="container"> 
+    <!--左边侧栏-->
+    <div class="sidebar"> 
+		<include file="Public:leftcolumn"/>
+		<include file="Public:conectus"/>
+	</div>
+    <!--右边正文内容-->
+    <div class="column"> 
+	<include file="Public:bread"/>
+      <div class="sidebar_con">
+        <div class="current_content">
+          <form id="GBookAdd"  method="post" action="__SELF__" class="mess_form">
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="10%" height="30" align="right">留言标题：</td>
+                <td width="70%"><input type="text" name="title" id="Fk_GBook_Name"  size="20" style="border:1px solid #999; height:24px;" />
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="30" align="right">您的姓名：</td>
+                <td width="70%"><input type="text" name="name" id="Fk_GBook_Contact" size="26"  style="border:1px solid #999"/>
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="25" align="right">您的电话：</td>
+                <td width="70%"><input type="text" name="phone" id="Fk_GBook_Title" size="30"  style="border:1px solid #999"/>
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="25" align="right">公司传真：</td>
+                <td width="70%"><input type="text" name="fax" id="Fk_GBook_Title" size="30"  style="border:1px solid #999"/>
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="25" align="right">E-mail：</td>
+                <td width="70%"><input type="text" name="email" id="Fk_GBook_Title"  size="30" style="border:1px solid #999"/>
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="25" align="right">单位名称：</td>
+                <td width="70%"><input type="text" name="company" id="Fk_GBook_Title"  size="30" style="border:1px solid #999"/>
+                  *</td>
+              </tr>
+              <tr>
+                <td width="10%" height="25" align="right">在线留言：</td>
+                <td width="70%"><textarea name="content" rows="4" id="Fk_GBook_Content" style="margin-top:4px; border:1px solid #999; width:400px;"></textarea>
+                  *</td>
+              </tr>
+              <tr>
+                <td height="25" colspan="2" align="center">
+                  <input type="submit" id="Submit" value="提交" class="ajax_post" target_form="mess_form"/>
+                  &nbsp;
+                  <input type="reset" id="ReSet" value="重置"/>
+				</td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+</block>

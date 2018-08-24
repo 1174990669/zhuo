@@ -1,0 +1,20 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+
+<div class="prod maxwin">
+    <div class="win about clearfix">
+    <volist name="left_navi" id="v">
+      <a href="{$v.url}" class="about-link <if condition='$column_info[id] eq $v[id]'>about-link-cat</if>">
+            <img src="__STYLE__/home/images/xg.png" alt="">
+            <span>{$v.name}</span>
+        </a>
+    </volist>    
+      
+    </div>
+</div>
+<div class="maxwin about-bgs">
+<div class="win about-con">
+   {$info.content}
+</div>
+</div>
+<include file="Public:bottom" />

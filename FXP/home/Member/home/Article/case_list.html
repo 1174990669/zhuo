@@ -1,0 +1,50 @@
+ <include file="Public:header" />
+    <section class="P_section_one">
+         <include file="Public:banner" />
+        <!-- <div class="container-fluid"> -->
+        <div class="container container_img">
+            <img class="con_img" src="{$top_column.home_img}" alt="200x120">
+            <div class="div">
+                <div class="d_left">
+                    <p class="L_p cli1"><a href="#">{$top_column.name} <span>-</span></a></p>
+                    <div class="d_top">
+                    <volist name="left_navi" id="v">
+                        <div class="act <if condition='$column_info[id] eq $v[id]'>active</if>"><a href="{$v.url}">- {$v.name} <span>></span></a></div>
+                    </volist>
+                    </div>
+                </div>
+                   <include file="Public:left" />
+            </div>
+            <div class="div d_right left_8 width">
+                <include file="Public:bread" />
+                <div class="d_cli1 div_cent">
+                    <div class="row pad_20">
+                        <div class="col-md-12">
+                            <div class="d_contact">
+                                <ol>
+                                    <li>Position name</li>
+                                    <li>Position classification</li>
+                                    <li>Job content</li>
+                                </ol>
+                                 <volist name="article_list" id="v">
+                                    <ul id="1" class="ul_01">
+                                       <a href="{$v.url}"> <li>{$v.name}</li>
+                                        <li>{$v.sub_name}</li>
+                                        <li>Job description:{$v.sub_content}</li></a>
+                                    </ul>
+                               </volist>
+                            </div>
+                              <div class="text-center">
+                        <ul class="pagination">
+                         {$pagelist}
+                        </ul>
+                    </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+ <include file="Public:bottom" />

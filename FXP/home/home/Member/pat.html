@@ -1,0 +1,142 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__STYLE__/home/css1/main.css">
+<link rel="stylesheet" type="text/css" href="__STYLE__/home/css1/public.css">
+    <script type="text/javascript" src="__PUBLIC__/common/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="/Public/validform/validate.css"/>
+<script type="text/javascript" src="/Public/validform/validform_v5.3.2.js"></script>
+<script type="text/javascript" src="/Public/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/common/jquery.submit.js"></script>
+<script type="text/javascript" src="/Public/common/layer.func.js"></script>
+<script charset="utf-8" src="/Public/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="/Public/kindeditor/lang/zh_CN.js"></script>
+<link rel="stylesheet" href="/Public/kindeditor/themes/default/default.css"/>
+    <script>
+    KindEditor.ready(function(K) {
+        var editor_image = K.editor({
+            allowFileManager : true,
+            afterBlur: function () { this.sync(); },
+            uploadJson : "/Upload/index",
+            fileManagerJson : "/Upload/filelist"
+        });
+        //--上传图片
+        K('.upload_image').click(function() {
+            var urlinput=$(this).attr('for')
+            editor_image.loadPlugin('image', function() {
+                editor_image.plugin.imageDialog({
+                    showRemote : false,
+                    imageUrl : K('#'+urlinput).val(),
+                    clickFn : function(url, title, width, height, border, align) {
+                        K('#'+urlinput).val(url);
+                        $('.head_img').attr('src',$('#f_upload1').val());
+                        editor_image.hideDialog();
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+<div style="min-height: 680px;">
+<div class="server-nav">
+    <div class="server-nav-con font14">
+
+        <!---server-nav-con-fr-->
+        <div class="fl black6">
+            <div class="zhanlan_top">
+				<p><span>当前位置：</span><a href="/">主页</a> &gt; <a href="{:U('member/pat')}">作品送拍</a></p>
+			</div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="user-center">
+        
+
+<div class="user-center-left font14">
+    <h2 class="font18 blackf">会员中心</h2>
+    <ul>
+       <li><a href="{:U('member/pat')}" class="black45 hover">作品送拍</a></li>
+        <li><a href="{:U('member/bidding')}">委托竞买</a></li>
+        <li><a href="{:U('member/item')}">拍品收藏</a></li>
+        <li><a href="{:U('member/infoalter')}">个人信息</a></li>
+        <li><a href="{:U('member/logout')}">退出登录</a></li>
+    </ul>
+</div>
+
+        <div class="user-center-right">
+            <div class="user-center-right-tit font18 blackf">作品送拍</div>
+
+     <form method="post" action="{:U('Member/pat')}"  id="form1" name="form1" enctype="multipart/form-data">
+            <div class="blank20"></div>
+            <div class="user-center-right-per">
+            <input type="hidden" name="column_id" value="1">
+                <dl class="font14 black45">
+                    <dt>姓名：</dt>
+                    <dd>
+                        <input type="text" id="txtRealName" class="user-center-right-input3 font14 black45 round-5" value="" name="name" required=""></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt>电话：</dt>
+                    <dd>
+                        <input type="text" id="txtMobile" class="user-center-right-input3 font14 black45 round-5" value="" name="phone" required=""></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt>邮箱：</dt>
+                    <dd>
+                        <input type="text" id="txtEmail" class="user-center-right-input3 font14 black45 round-5" value="" name="email" required=""></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt>名称：</dt>
+                    <dd>
+                        <input type="text" id="txtLotName" class="user-center-right-input3 font14 black45 round-5" value="" placeholder="如：赵少昂 1989年作 花鸟 镜框" name="title" required=""></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0"></font>分类：</dt>
+                    <dd class="user-center-right-select zjzx-nav-select round-5 black6" style="width: 400px; height: 35px">
+                        <select class="selected"  name="company">
+                            <option value="" name="company">请选择作品所属类别</option>
+                                  <volist name="info" id="v">
+                                    <option value="{$v.name}">{$v.name}</option>
+                                  </volist>
+                                 
+                        </select>
+                    </dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt>图片：</dt>
+                    <dd>
+            <div class="field">
+              <div class="input-group" style="width:550px;">
+             <input type="hidden" id="f_upload1" name="src_img">
+            <button type="button" class="button bg-blue upload_image icon-arrow-up file" for="f_upload1" style="border-radius: 0;">上传图片</button>
+
+              <if condition="$head_img eq ''">
+                                <div class="touxiangqu"><img class="head_img" style="max-width:100%"></div>
+                                <else/>
+                                <div class="touxiangqu"><img class="head_img" src="{$head_img}" style="max-width:100%"></div>
+                            </if>
+              </div>
+            </div>
+
+                    </dd>
+                </dl>
+                <div class="blank10"></div>
+                <dl class="font14 black45">
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <input type="submit" class="user-center-right-but font16 blackf round-5" value="提交"></dd>
+                </dl>
+            </div>
+            </form>
+            <!--user-center-right-per-->
+        </div>
+        <!--user-center-right-->
+    </div>
+    <!--user-center-->
+    <div class="blank40"></div>
+    
+</div>
+<include file="Public:member_bottom" />
+
+

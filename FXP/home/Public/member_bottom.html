@@ -1,0 +1,191 @@
+        <div class="footer">
+            <div class="footer_in">
+                <div class="footer_top">
+                    <div class="fl footer_topl">
+                        <div class="funav">
+                            <a href="/">首页</a><span>|</span>
+                            <a href="/guanyuyanhuang.html">关于炎黄</a><span>|</span>
+                            <a href="/yewufanwei.html">业务范围</a><span>|</span>
+                            <a href="/lianxiwomen.html#mask">网站地图</a><span>|</span>
+                            <a href="/lianxiwomen.html">联系我们</a>
+                        </div>
+                        <div class="address">
+                            {:C('WEB_CONTACT')}
+                        </div>
+                    </div>
+                    <div class="fr footer_topr">
+                       {:C('WEB_EWMLX')}
+                    </div>
+                </div>
+                <hr style="height:2px;border:none;border-top:2px groove #710611;" />
+                <div class="footer_bot">
+                    <a href="javascript:;">友情链接：</a>
+                    <volist name="link_list" id="v">
+                    <a href="{$v.url}" target="_blank">{$v.name}</a><if condition="end($v)"><else /><span>|</span></if>
+                   </volist>
+                    <p>{:C('WEB_ICP')}   技术支持：时代万网</p>
+                </div>
+            </div>
+        </div>
+        <!--联系我们-->
+        <div id="onService_panel">
+    <div class="onService_panel_s">
+        <div class="online_boxs">
+            <div class="boxs_t"><span class="boxs_t_l"></span><span class="boxs_t_m"></span><span class="boxs_t_r"></span></div>
+            <div class="boxs_m_l">
+                <div class="boxs_m_r">
+                    <div class="box_m_m">
+                        <div id="onlineList">
+                            <em class="online_close" id="onlineClose" title="关闭"></em>
+                            <div class="online_open" id="onlineOpen"></div>
+                            
+                            <div id="online_tel_icon" class="online_icon">
+                                <span class="pic"><img src="__STYLE__/home/img/online_tel.png" /></span>
+                                <span class="name">电话直呼</span>
+                            </div>
+                            
+                            <div id="online_qq_icon" class="online_icon">
+                                <span class="pic"><img src="__STYLE__/home/img/online_qq.png" /></span>
+                                <span class="name">在线客服</span>
+                            </div>
+                            
+                            <div id="online_message_icon" class="online_icon">
+                                <span class="pic"><img src="__STYLE__/home/img/online_message.png" /></span>
+                                <span class="name">在线留言</span>
+                            </div>
+                            
+                            <div id="online_email_icon" class="online_icon">
+                                <span class="pic"><a href="mailto:1234567@qq.com"><img src="__STYLE__/home/img/online_email.png" /></a></span>
+                                <span class="name">发送邮件</span>
+                            </div>
+                            
+                            <div id="online_address_icon" class="online_icon">
+                                <span class="pic"><a href="/lianxiwomen.html#mask"><img src="__STYLE__/home/img/online_address.png" /></a></span>
+                                <span class="name">企业地标</span>
+                            </div>
+                            
+                            <div id="onlineTelTab" class="online_tab">
+                                <div class="online_boxs">
+                                    <div class="boxs_t"><span class="boxs_t_l"></span><span class="boxs_t_m"></span><span class="boxs_t_r"></span></div>
+                                    <div class="boxs_m_l">
+                                        <div class="boxs_m_r">
+                                            <div class="box_m_m">
+                                                <div id="onlineTel" class="online_tab_c">
+                                                    <small class="sanjiao"></small>
+                                                    <small class="tab_close"></small>
+                                                    <dl>
+                                                        <dt><strong>联系我们：</strong></dt>
+                                                        <dd><strong>联系人：</strong><span>{:C('WEB_REN')}</span></dd>
+                                                        <dd><strong>电话：</strong><span>{:C('WEB_DIANHUA')}</span></dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxs_b"><span class="boxs_b_l"></span><span class="boxs_b_m"></span><span class="boxs_b_r"></span></div>
+                                </div>
+                            </div>
+                            
+                            <div id="onlineQQTab" class="online_tab">
+                                <div class="online_boxs">
+                                    <div class="boxs_t"><span class="boxs_t_l"></span><span class="boxs_t_m"></span><span class="boxs_t_r"></span></div>
+                                    <div class="boxs_m_l">
+                                        <div class="boxs_m_r">
+                                            <div class="box_m_m">
+                                                <div id="onlineQQ" class="online_tab_c">
+                                                    <small class="sanjiao"></small>
+                                                    <small class="tab_close"></small>
+                                                    <dl>
+                                                    <volist name="customer_list" id="v">
+                                                       <dt>{$v.name} </dt>
+                                                       <dd> <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$v.qqnum}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$v.qqnum}:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a> </dd>
+                                                      </volist>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxs_b"><span class="boxs_b_l"></span><span class="boxs_b_m"></span><span class="boxs_b_r"></span></div>
+                                </div>
+                            </div>
+                            
+                            <div id="onlineMessageTab" class="online_tab">
+                                <div class="online_boxs">
+                                    <div class="boxs_t"><span class="boxs_t_l"></span><span class="boxs_t_m"></span><span class="boxs_t_r"></span></div>
+                                    <div class="boxs_m_l">
+                                        <div class="boxs_m_r">
+                                            <div class="box_m_m">
+                                            <form id="form1" name="form1" method="post" action="{:U('Message/index')}">
+                                                <div id="onlineMessage" class="online_tab_c">
+                                                    <small class="sanjiao"></small>
+                                                    <small class="tab_close"></small>
+                                                    <dl>
+                                                        <dt><textarea onfocus="h_con()" onblur="s_con()" name="content" id="content1" onkeyup="checkLen(this,200)"></textarea></dt>
+                                                        <dd class="text_length">还可输入字符<b>200</b>（限制字符200）</dd>
+                                                        <dd>
+                                                            <label>您的姓名：</label>
+                                                            <input type="text" class="text_input" name="name" id="name"  maxlength="20" />
+                                                        </dd>
+                                                        <dd>
+                                                            <label>您的邮箱：</label>
+                                                            <input type="text" class="text_input" name="email" id="email" maxlength="50" />
+                                                        </dd>
+                                                        <dd>
+                                                            <label>您的电话：</label>
+                                                            <input type="text" class="text_input" name="phone" id="phone" maxlength="30"/>
+                                                            <input type="submit" class="submitBut" value="提交" onclick="sub_check(446632)" />
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="boxs_b"><span class="boxs_b_l"></span><span class="boxs_b_m"></span><span class="boxs_b_r"></span></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="boxs_b"><span class="boxs_b_l"></span><span class="boxs_b_m"></span><span class="boxs_b_r"></span></div>
+        </div>
+    </div>
+</div>
+<div class="popup">
+    <div class="popup_in">
+        <h1>注册提示</h1>
+        <p>尊敬的访客您好！注册会员，请您联系网站客服，或者致电到 <span>0755-28285509</span> 获取账号</p>
+        <button>确定</button>
+    </div>
+</div>
+<style type="text/css">
+    .popup{width:100%; height: 100%; background:rgba(0,0,0,.3); position:fixed; left: 0; top:0;display: none;}
+    .popup_in{width: 516px; background:#fff; border-radius: 10px; margin:290px auto 0; padding-bottom:20px;}
+    .popup_in h1{text-align: center; line-height: 44px; background:#e95c5c; border-radius: 10px 10px 0 0;font-size:18px; color:#fff;}
+    .popup_in p {font-size:16px; width: 346px; line-height: 34px;margin:26px auto 84px}
+    .popup_in p span{color:#E95C5C;}
+    .popup_in button{width: 90px; height: 34px; border-radius: 4px; border:0; background:#E95C5C; color:#fff;margin:0 auto;display: block;cursor:pointer;}
+    
+    
+    
+</style>
+<link href="__STYLE__/home/css/online.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__STYLE__/home/js/online.js"></script>
+        </script>
+        <script>
+        $(document).ready(function(){
+            $('.header_in li').hover(function(){
+        $(this).children(".Submenu").stop().slideToggle();
+        })
+            $('.regzc').click(function(){
+            $('.popup').show();
+        })
+        $('.popup button').click(function(){
+            $('.popup').hide();
+        })
+    })
+    </script>
+    </body>
+</html>

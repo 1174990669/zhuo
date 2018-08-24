@@ -1,0 +1,37 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+
+<div class="prod maxwin">
+    <div class="win about clearfix">
+       <volist name="left_navi" id="v">
+      <a href="{$v.url}" class="about-link <if condition='$column_info[id] eq $v[id]'>about-link-cat</if>">
+            <img src="__STYLE__/home/images/xg.png" alt="">
+            <span>{$v.name}</span>
+        </a>
+    </volist>  
+    </div>
+</div>
+<div class="maxwin about-bgs">
+    <div class="win invite">
+        <table class="invite-tba">
+            <tr>
+                <th width="206">职位名称</th>
+                <th width="200">职位分类</th>
+                <th width="600">工作内容</th>
+                <th width="130">查看详情</th>
+            </tr>
+            <volist name="product_list" id="v">
+            <tr>
+                <td>{$v.name}</td>
+                <td>{$v.sub_name}</td>
+                <td>{$v.sub_content}</td>
+                <td><a href="{$v.url}" class="invite-tba-link">查看详情</a></td>
+            </tr>
+           </volist>
+        </table>
+        <div class="page">
+            {$pagelist}
+        </div>
+    </div>
+</div>
+ <include file="Public:bottom" />

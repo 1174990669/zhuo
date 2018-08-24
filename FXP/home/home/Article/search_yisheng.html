@@ -1,0 +1,78 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+<div class="w1000">
+    <div class="index-one" style="border: 0;margin-bottom: 0;">
+      <include file="Public:search" />
+    </div>
+    <div class="top-nav">
+        <p>当前位置：
+            <a href="/">首页</a>
+              &nbsp;&gt;&nbsp;<a>搜索结果</a>
+        </p>
+    </div>
+    <div class="content-box over">
+        <div class="content-left">
+            <h4>科室</h4>
+            <div class="content-left-top">
+                <ul>
+                <volist name="yisheng_navi" id="v">
+                    <li><a href="{$v.url}" <if condition="$v['id'] eq $column_info['id']">class="current"</if>>{$v.name}</a></li>
+                </volist>
+                </ul>
+            </div>
+            <div class="content-left-bot">
+                <h4 class="contact-title">联系我们 <i>CONTACT US</i></h4>
+                <ul>
+                   {:C('WEB_LEFY')}
+                </ul>
+            </div>
+        </div>
+        <div class="content-right">
+            <h1 class="cont-public-title"><p class="active1 noline">搜索结果（{$_GET['keywords']}）</p></h1>
+ 
+            <div class="index-five-in zaixian-bot">
+                <ul>
+                <volist name="article_list" id="v">
+                    <li>
+                        <div class="zaixian-img">
+                            <img src="{$v.list_img}" alt="">
+                            <if condition="$v['column_ok'] eq 1">
+                            <i>特邀医生</i>
+                            </if>
+                        </div>
+                        <div class="zaixian-info">
+                            <h5>{$v.name}  {$v.hot}</h5>
+                            <p> {:msubstrge($v['sub_content'],0,43,'utf-8')}<a href="{$v.url}">详细</a></p>
+                            <if condition="$v['column_ok'] eq 1">
+                            <span>在线问诊</span>
+                            <span>视频问诊</span>
+                            <else />
+                            <span class="click">在线问诊</span>
+                            <span class="click">视频问诊</span>
+                            </if>
+                        </div>
+                    </li>
+              </volist>
+                </ul>
+            </div>
+            <div class="page">
+              {$pagelist}
+            </div>
+        </div>
+    </div>
+</div>
+<!--下载APP提示框 判断是本院的医生就与其交谈 若不是提示下载app-->
+<div class="propup-box">
+    <div class="propup">
+        <p>下载健康好医生app，即可与医生实时在线咨询</p>
+        <a href="/huanzheduanapp.html">确定</a>
+    </div>
+</div>
+<include file="Public:bottom" />
+<script>
+    //    在线问诊
+    $(".click").click(function(){
+        $(".propup-box").show();
+    });
+</script>
+ 

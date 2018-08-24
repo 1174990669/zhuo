@@ -1,0 +1,59 @@
+<include file="Public:header" />
+<div class="w1000">
+    <div class="top-nav">
+        <p>当前位置：
+            <a href="/">首页 &gt;</a>
+            <a href="">网站地图</a>
+        </p>
+    </div>
+    <div class="content-box over">
+        <div class="content-left">
+            <div class="content-left-top">
+                <ul>
+                    <volist name="navis" id="v">
+                    <li><a href="{$v.url}">{$v.name}</a></li>
+               </volist>
+                <li><a href="{:U('Index/map')}" class="current">网站地图</a></li>
+                </ul>
+            </div>
+            <div class="content-left-bot">
+                <h4 class="contact-title">联系我们</h4>
+                <ul>
+                   {:C('WEB_LEFY')}
+                </ul>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-right-box" style="border:1px solid #f1f1f1;">
+                <div class="news-two-list">
+                    <h1>网站地图</h1>
+                </div>
+                <div class="ditu">
+                    <div class="wm_b1_a">
+                        <ul>
+                            <li>
+                                <div class="first"><a href="/">首页</a></div>
+                            </li>
+                            <volist name="map" id="v">
+                            <li>
+                                <div class="first"><a href="{$v.url}">{$v.name}</a>
+                                </div>
+                                <div class="second">
+                                <volist name="v.list" id="vv">
+                                    <dl>
+                                        <dt><a href="{$vv.url}">{$vv.name}</a>
+                                        </dt>
+                                    </dl>
+                                    <i></i>
+                                </volist>   
+                                </div>
+                            </li>  
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:bottom" />

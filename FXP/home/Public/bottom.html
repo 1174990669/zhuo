@@ -1,0 +1,44 @@
+<!--<div class="fixed">
+    <p class="fixed_p">在线客服</p>
+    <div class="w_80">
+        <span class="kf">客服QQ</span>
+        <ul>
+            <volist name="customer_list" id="v">
+                <li><a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$v.qqnum}&amp;site=qq&amp;menu=yes"
+                       target="_blank"><img src="__STYLE__/home/images/icon/qq.jpg" alt=""></a></li>
+            </volist>
+        </ul>
+    </div>
+</div>-->
+<footer>
+    <div class="container foot_top">
+        <div class="inline">
+            <img src="__STYLE__/home/images/icon/icon1.jpg" alt="40x40">
+        </div>
+        <div class="inline">
+            <h4>友情链接 <span>&nbsp;&nbsp;LINKS</span></h4>
+        </div>
+        <div class="inline">
+           <p>
+                <volist name="link_list" id="v">
+                    <a href="{$v.urk}" target="_blank">{$v.name}</a>
+                </volist>
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid back">
+        <div class="container">
+            <div class="hidden-xs"> 
+             {:C('WEB_ICP')}
+                </div>
+             
+            <div class="visible-xs-block">
+               {:C('WAP_BOTTOM')}
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

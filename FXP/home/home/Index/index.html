@@ -1,0 +1,109 @@
+<include file="Public:header" />
+    <section class="section_one">
+        <div id="swiper1" class="swiper-container swi_img">
+            <div class="swiper-wrapper">
+            <volist name="banner_list" id="v">
+                <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.src_img}" alt="{$v.title}"></a></div>
+            </volist>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="container-fluid top_24">
+            <div class="container">
+                <div class="row he_30">
+                    <div class="col-xs-8 col-md-8 he_50">
+                        <span><a href="#">热搜词：</a></span>
+                        <volist name="hottag" id="v">
+                        <span><a href="{:U('Product/search',array('keywords'=>$v['name']))}">{$v.name}</a></span>
+                       </volist>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <form id="form" class="navbar-form navbar-left" role="search" action="{:U('Product/search')}" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control input_control" placeholder="请输入关键字" name="keywords" />
+                            </div> 
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="column content">
+                        <h3>我们的产品</h3>
+                        <h5>OUR PRODUCTS</h5>
+                        <p>
+                            卓锦材料贸易主要从事建筑装饰材料、建筑声学光学材料、五金制品、装潢板材金属材料、不锈钢制品、木制制品、油漆、消防器材、环保节能材料的研发与销售；模具设计；电梯、涂料、塑料、电线电缆、对讲系统设备、开关元器件的销售。公司秉承团结、创新、高效与诚信的精神，欢迎交流合作！
+                        </p>
+                    </div>
+                </div>
+                <volist name="fuwu" id="vv">
+                <div class="row pad_20">
+                  <volist name="vv" id="v">
+                    <div class="col-xs-3 col-md-3">
+                        <a href="{$v.url}">
+                            <div class="div_bor">
+                                <h4>{$v.name}</h4>
+                                <p>{$v.content}</p>
+                            </div>
+                            <div class="div_back">more</div>
+                        </a>
+                    </div>
+                  </volist>
+                </div>
+                </volist>
+                <div class="center"><a href="/service.html">More</a></div>
+            </div>
+        </div>
+        <div class="container-fluid top_24 back_f4">
+            <div class="container">
+                {:C('WEB_SHOU')}
+            </div>
+        </div>
+        <div class="container-fluid top_24">
+            <div class="container">
+                <div class="back_url bot_40">
+                    <a href="xiangmuzhanshi.html">+MORE</a>
+                    <h3 class="H3">合作施工案例</h3>
+                    <h4 class="H4">PARTIAL SUCCESS CASE</h4>
+                </div>
+                <div id="swiper2" class="swiper-container">
+                    <div class="swiper-wrapper" style="right: 440px;">
+                    <volist name="new_list" id="v">
+                        <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}"></a></div>
+                   </volist>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <script>
+        var swiper = new Swiper('#swiper1', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper('#swiper2', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
+            freeMode: true,
+            loop:false,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                prevEl: '.swiper-button-next',
+                nextEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+<include file="Public:bottom" />

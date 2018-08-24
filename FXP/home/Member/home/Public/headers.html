@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <include file="Public:meta" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="__STYLE__/home/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="__STYLE__/home/css/index.css" > 
+    <link rel="stylesheet" href="__STYLE__/home/css/swiper.min.css">
+    <link rel="stylesheet" href="__STYLE__/home/css/Product.css" > 
+    <script src="__STYLE__/home/js/jquery-3.0.0.min.js" ></script>
+    <script src="__STYLE__/home/js/swiper.min.js"></script>
+    <script src="__STYLE__/home/js/bootstrap.min.js" ></script>
+    <script src="__STYLE__/home/js/js.js"></script>
+    <script src="__STYLE__/home/js/MagicZoom.js" type="text/javascript"></script>
+
+
+    <style>
+        #divcss5 {width: 355px; height: 355px; padding: 5px;position: absolute;top:540px;left:50%;z-index: 9;transform: translate(-100%); } 
+        #divcss5 .small_pic5 { width: 355px; height: 355px; background: #fff;position: relative;text-align:center; } 
+        #divcss5 .small_pic5>img{width:250px;height:250px;margin-top:60px;}
+        #divcss5 .float_layer5 { width: 50px; height: 50px; background: transparent;filter:alpha(opacity:30);opacity: 0.3;position: absolute; top: 0; left: 0; display:none; } 
+        #divcss5 .mark5 {width:100%; height:100%; position:absolute; z-index:2;left:0px; top:0px; background:red; filter:alpha(opacity:0); opacity:0;} 
+        #divcss5 .big_pic5 { position: absolute; top: 0px; left: 376px; width:290px; height:290px; overflow:hidden;  display:none; } 
+        #divcss5 .big_pic5 img { position:absolute; top: -30px; left: -80px; } 
+        .d_cli1 .D_block{}
+        .d_cli1 .D_block .relat{position: relative;}
+        .main{float: left;}
+        #tsShopContainer{position: absolute;width: 355px;height: 355px;z-index: 99;}
+        #tsShopContainer #tsImgS{width: 100%;height:100%;padding:0;}
+        #tsShopContainer #MagicZoom{width:100%;}
+        #tsShopContainer #tsImgS #sim989902{width:100%;height:100%;}
+        .s-lt img{display: none;}
+        .MagicZoomBigImageCont{width:355px!important;height:355px!important;padding-left:10px;background: #eee;}
+        .MagicZoomBigImageCont>div{width:355px!important;height:355px!important;}
+        .MagicZoomBigImageCont>div>img{width:750px!important;height:750px!important;}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container-fluid bor_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-md-8">{:C('WEB_COME')}</div>
+                    <div class="col-xs-6 col-md-4"><a href="/"> 中文 </a> <a href="javascript:;"  onclick="AddFavorite()">丨Collection this station </a> <a href="/lianxixianneng.html">| Contact us</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid w_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6 col-md-7"><img alt="140x140" src="{:C('LOGO_IMAGE')}" /></div>
+                    <div class="col-xs-6 col-md-5"><img alt="140x140" src="__STYLE__/home/images/icon.png" /><p>customer service hotline<br/><b>{:C('WEB_PHONE')}</b></p></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid back_24">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-md-12 column">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav pull-left li_click">
+                                    <li <if condition="$top_column['id'] eq ''"> id="active"</if>><a href="/en">Home</a></li>
+                                    <volist name="header_navi" id="v">
+                                    <li <if condition="$v['son'] neq ''">class="li_pos"</if> <if condition="$top_column['id'] eq $v[id]"> id="active"</if>>
+                                    <if condition="$v['son'] neq ''">
+                                     <div class="cata">
+                                     <volist name="v.son" id="vo">
+                                            <a href="{$vo.url}">{$vo.name}</a>
+                                      </volist>
+                                        </div>
+                                        </if>
+                                    <a href="{$v.url}">{$v.name}</a></li>
+                                   </volist>
+                                </ul>
+                                <form id="form" class="navbar-form navbar-left" role="search" method="post" action="{:U('Product/search')}">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control input_control" placeholder="Search keywords" name="keywords" />
+                                    </div> 
+                                    <button type="submit" class="btn btn-default">St</button>
+                                </form>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

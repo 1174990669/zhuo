@@ -1,0 +1,194 @@
+<include file="Public:header" />
+    <section class="section_one">
+        <div id="swiper1" class="swiper-container swi_img">
+            <div class="swiper-wrapper">
+            <volist name="banner_list" id="v">
+                <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.src_img}" alt="{$v.title}"></a></div>
+            </volist>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="container-fluid top_24">
+            <div class="container">
+                <div class="row he_30">
+                    <div class="col-xs-12 col-md-8 he_50">
+                        <span><a href="#">热搜词：</a></span>
+                        <volist name="hottag" id="v">
+                        <span><a href="{:U('Product/search',array('keywords'=>$v['name']))}">{$v.name}</a></span>
+                       </volist>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <form id="form" class="navbar-form navbar-left" role="search" action="{:U('Product/search')}" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control input_control" placeholder="请输入关键字" name="keywords" />
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="column content">
+                        <h3>产品展示</h3>
+                        <h5>SERVACE ITEMS</h5>
+                        <!--<p>
+                            卓锦材料贸易主要从事建筑装饰材料、建筑声学光学材料、五金制品、装潢板材金属材料、不锈钢制品、木制制品、油漆、消防器材、环保节能材料的研发与销售；模具设计；电梯、涂料、塑料、电线电缆、对讲系统设备、开关元器件的销售。公司秉承团结、创新、高效与诚信的精神，欢迎交流合作！
+                        </p>-->
+                    </div>
+                </div>
+                <volist name="fuwu" id="vv">
+                <div class="row pad_20">
+                  <volist name="vv" id="v">
+                    <div class="col-xs-3 col-md-3">
+                        <div class="div_bor">
+                            <h4>{$v.name}</h4>
+                            <p>{$v.content}</p>
+                        </div>
+                        <div class="div_back"><a href="{$v.url}">more</a></div>
+                    </div>
+                  </volist>
+                </div>
+                </volist>
+                <!-- 电脑 ipad 显示产品， -->
+                <div id="swiper3" class="swiper-container swiperthree hidden-xs">
+                    <div class="swiper-wrapper">
+                    <volist name="product_list" id="v">
+                        <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}">
+                            <p>{$v.name}</p>
+                        </a></div>
+                       </volist>
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <!-- 手机显示产品， -->
+                <div class="inmobileclisrt visible-xs-block row">
+                 <volist name="product_list" id="v">
+                    <div class="col-xs-6">
+                    <a href="{$v.url}" class="inmobileclisrtlink"><img src="{$v.list_img}" alt="{$v.name}"><p>{$v.name}</p></a>
+                    </div>
+                   </volist>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid top_24 back_f4">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="column content">
+                        <h3>
+                            卓锦综合实力
+                        </h3>
+                        <h5>
+                            Protech Power service
+                        </h5>
+                    </div>
+                </div>
+                <div class="row pad_20 hidden-xs">
+                    <div class="col-xs-3 col-md-3">
+                        <img alt="140x140" src="/Style/home/images/name.jpg" />
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <img alt="140x140" src="/Style/home/images/boy.jpg" />
+                    </div>
+                    <div class="col-xs-3 col-md-3">
+                        <img alt="140x140" src="/Style/home/images/book.png" />
+                    </div>
+                </div>
+                <div class="row pad_20">
+                    <div class="col-xs-12 col-md-4">
+                        <div class="div_bor b_one">
+                            <h4>
+                                精益求精做好产品
+                            </h4>
+                            <p>
+                                深圳市卓锦材料贸易有限公司专业从事建筑材料的研发、生产、销售及配套技术服务，业务不断发展壮大，我们始终坚持用户至上，用心服务于客户
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="div_bor b_two">
+                            <h4>
+                                完善的服务体系
+                            </h4>
+                            <p>
+                                卓锦材料贸易服务响应速度快，专业客服，提供免费的技术咨询，提高客户满意度。集研发、生产、销售与一体，坚持品质第一的生产经营理念。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="div_bor b_thr">
+                            <h4>
+                                功能检测100%合格率
+                            </h4>
+                            <p>
+                                产品适用于近30种结构维护加固方法及技术，多达25道检验与控制流程，产品经过严格把控，严格遵照国际质量管理体系管控。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid top_24">
+            <div class="container">
+                <div class="back_url bot_40">
+                    <a href="#">+MORE</a>
+                    <h3 class="H3">合作施工案例</h3>
+                    <h4 class="H4">PARTIAL SUCCESS CASE</h4>
+                </div>
+                <div id="swiper2" class="swiper-container hidden-xs">
+                    <div class="swiper-wrapper">
+                        <volist name="new_list" id="v">
+                            <div class="swiper-slide"><a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}"></a></div>
+                       </volist>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                <!-- 手机显示产品， -->
+                <div class="inmobileclisrt visible-xs-block row">
+                    <volist name="new_list" id="v">
+                        <div class="col-xs-6"><a href="{$v.url}" class="inmobileclisrtlink"><img src="{$v.list_img}" alt="{$v.name}"></a></div>
+                    </volist>
+                </div>
+            </div>
+        </div>
+    </section>
+        <script>
+        var swiper = new Swiper('#swiper1', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper('#swiper2', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
+            // freeMode: true,
+            loop:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        var swiper = new Swiper('#swiper3', {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 10,
+            // freeMode: true,
+            loop:true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+<include file="Public:bottom" />

@@ -1,0 +1,179 @@
+<include file="Public:header" />
+  <style type="text/css">
+      .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+      .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+  </style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+  <style>
+    .section_one .d_img{position: relative;}
+    .section_one .d_img .div_absou{position: absolute;top:50px;left: 50%;z-index: 2;color: #1e50ae;font-weight: 600;}
+    .section_one .d_img .H_fff h3{font-weight: 600;color:#fff;font-family: "宋体";}
+    .section_one .d_img .H_fff h3:after{content:'';position:absolute;border-bottom: 1px solid #fff;bottom:-10px;width: 70px;left:50%;transform: translate(-50%);}
+    .section_one .top_24 .B_fff .p_bor{position: relative;border-bottom: 1px solid #eaeaea;color:#007ac3;font-weight: 600;height: 40px;line-height: 40px; }
+    .section_one .top_24 .B_fff .p_bor:after{content:'';position:absolute;width: 100px;bottom:0;height: 2px;background:#007ac3;left: 0; }
+    .section_one .top_24 .B_fff .div_product{}
+    .pagination>li{display: inline-block;}
+    .pagination>li>a, .pagination>li>span{border:none;}
+    .pagination>li>a:hover{background: #dab866;color:#fff;}
+    .pagination>li .active{background: #dab866;color:#fff;}
+    .section_one .top_24 .B_fff .div_product .Li_div{padding-top: 20px;}
+    .section_one .top_24 .B_fff .div_product .Li_div .LI{display:inline-block;vertical-align: top;height: 130px;}
+    .section_one .top_24 .B_fff .div_product .Li_div .wi_30{width:22%;}
+    .section_one .top_24 .B_fff .div_product .Li_div .wi_69{width:77%;border-bottom:1px dashed #eaeaea;}
+    .section_one .top_24 .B_fff .div_product .Li_div .LI h4{color:#fda102;padding-top:8px;}
+    .section_one .top_24 .B_fff .div_product .Li_div .LI p{color:#666;padding-top:8px;line-height: 26px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+    .section_one .top_24 .B_fff .div_product .Li_div .LI img{width:180px;height:130px;}
+    /*.section_one .top_24 .R_w9{width:90%;margin:0 auto;}*/
+    .section_one .top_24 .R_w9 .d_contact{}
+    .section_one .top_24 .R_w9 .d_contact ol{}
+    .section_one .top_24 .R_w9 .d_contact ul{}
+    .section_one .top_24 .R_w9 .d_contact li{width: 24%;height:68px;line-height:68px;border-bottom:1px solid #eaeaea;vertical-align: top;}
+    .section_one .top_24 .R_w9 .d_contact ul>li:nth-of-type(3){width:52%;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+    .section_one .top_24 .R_w9 .d_contact ul li{font-size:14px;color: #999;}
+    .section_one .top_24 .R_w9 .Div{display: inline-block;vertical-align: top;height: 130px;padding-left:20px;}
+    .section_one .top_24 .R_w9 .H3{padding:14px 0 16px 20px;}
+    .section_one .top_24 .R_w9 .Div_img{padding:20px 0 20px 20px;}
+    .section_one .top_24 .R_w9 .Div_top5{padding-top:50px;}
+    .section_one .top_24 .R_w9 .Div_3{width:12%;}
+    .section_one .top_24 .R_w9 .Div_7{width:84%;padding-top:24px;line-height: 26px;}
+    .section_one .top_24 .R_w9 .Div_5{width:48%;}
+    .section_one .top_24 .R_w9 .Div_3 img{width: 123px;height: 123px;} 
+    .section_one .top_24 .R_w9 .Div_5 img{float:left;width:138px;height: 138px;}
+    .section_one .top_24 .R_w9 .Div_5 .p_sao{text-indent:14px;padding-top:44px;}
+
+
+  </style>
+ 
+  <section class="section_one">
+     <include file="Public:banner" />
+    <div class="container-fluid top_24 back_eee">
+      <div class="container">
+         <include file="Public:bread" />
+        <div class="row clearfix bacl_fff R_w9">
+            <div class="col-xs-12 col-md-12 B_fff Div_top5">
+            <div class="Div Div_3">
+              <img src="/Style/home/images/me.jpg" alt="#">
+            </div>  
+            <div class="Div Div_7">
+              <b>尊敬的访客：</b>
+              <p>当您来到联系我们这个页面时，您已成为我们最尊贵的客户，我们真诚的欢迎您的到来！期待为您提供更好的服务，您可以通过在线客服或者服务电话与我们取得联系。</p>
+            </div>
+            <h3 class="H3">联系我们 Contact</h3>            
+            <div class="Div Div_5">
+             {$info.content}
+            </div>
+            <div class="Div Div_5">
+              <img src="{:C('WEB_EWM')}" alt="#">
+              <p class="p_sao">扫一扫<br/>获取更多资讯</p>
+            </div>
+            <div class="Div_img">
+                <div style="width:800px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+              <!-- <img src="/Style/home/images/baidu.jpg" alt="#"> -->
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  
+
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(113.919449,22.518674);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"卓锦贸易有限公司",content:"深圳市南山区南山街道东滨路永新时代广场2号楼6层6001室",point:"113.919449|22.518674",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+     ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+      var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+      marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+      
+      (function(){
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click",function(){
+            this.openInfoWindow(_iw);
+          });
+          _iw.addEventListener("open",function(){
+            _marker.getLabel().hide();
+          })
+          _iw.addEventListener("close",function(){
+            _marker.getLabel().show();
+          })
+        label.addEventListener("click",function(){
+            _marker.openInfoWindow(_iw);
+          })
+        if(!!json.isOpen){
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("/Style/home/images/icon/tu.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+ <include file="Public:bottom" />

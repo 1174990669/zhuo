@@ -1,0 +1,28 @@
+<include file="Public:index_header" />
+    <div class="w100 melting" style="padding-top:0;">
+      <div class="wid1100 clear">
+        <div class="subnav">
+          <a href="/">首页</a><span>/</span>
+          <a href="/{$top_column.url}.html">将相投融</a>
+        </div>
+        <div class="melting-left fl">
+                  <div class="melting-left-news-list tr_details_box">
+                        <div class="tr_details">
+                          <h1>{$info.name}</h1>
+                          <p>发表人：<span>{$info.author}</span>&nbsp;&nbsp;&nbsp;&nbsp;发表时间：{$info.create_time}&nbsp;&nbsp;&nbsp;&nbsp;阅读：{$info.click_num}</p>
+                          <div class="tr_share clear">
+                          </div>
+                         <div>
+                           {$info.content}
+                         </div>
+                        </div>
+                  </div>
+
+
+
+        </div>
+      <include file="Public:right" />
+            </div>
+    </div>
+
+<include file="Public:bottom" />

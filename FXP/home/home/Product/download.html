@@ -1,0 +1,119 @@
+<include file="Public:header" />
+<div class="w100  melting" >
+    <div class="wid1100 clear">
+        <div class="clear">
+            <div class="melting-left fl clear">
+            <volist name="product_one" id="v">
+                <div class="melting-left-fl fl">
+                    <a href="{$v.url}" class="">
+                        <img src="{$v.list_img}" class="melting-com-left-img" alt="">
+                        <p class="melting-left-fl-text">{$v.name}</p>
+                    </a>
+                </div>
+            </volist>    
+                <div class="melting-left-fr">
+                <volist name="product_two" id="v">
+                    <div class="melting-left-fr-con">
+                        <a href="{$v.url}">
+                            <img src="{$v.list_img}" class="melting-com-left-img" alt="">
+                            <p class="melting-left-fl-text">{$v.name}</p>
+                        </a>
+                    </div>
+                  </volist>
+                </div>
+            </div>
+            <div class="melting-right fr">
+                <div class="melting-right-div">
+                    <h3 class="melting-right-div-h">
+                        <img src="__STYLE__/home/images/melting_1.png" alt="">
+                        <span>网站公告</span>
+                    </h3>
+                    <ul class="melting-right-div-ul">
+                    <volist name="site" id="v">
+                        <li><a href="{$v.url}">{$v.name}</a></li>
+                    </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear " style="margin-top: 25px;">
+               <div class="melting-left fl">
+                <div class="melting-left-news-list">
+                    <ul class="melting-left-news-list-ul clear" id="news_ul">
+                    <volist name="product_class" id="v">
+                        <li <if condition="$key eq 0">class="act"</if>>{$v.name}</li>
+                       </volist>
+                    </ul>
+                    <div class="melting-left-news-list-con" id="news_ul_box">
+                      <volist name="product_class" id="v">
+                        <ul class="melting-left-news-list-con_ul">
+                          <volist name="v.list" id="vo">
+                            <li>
+                                <a href="{$vo.url}">
+                                    <img src="{$vo.list_img}" alt="">
+                                    <div>
+                                        <h3>{$vo.name}</h3>
+                                        <p class="time"><span>{$vo.create_time}</span><span>阅读({$vo.click_num})</span></p>
+                                        <p class="txt">{$vo.sub_content}</p>
+                                        <p class="point">
+                                        <volist name="vo.hot" id="vv">
+                                        <a href="{:U('Product/search')}?keywords={$vv}"><span>{$vv}</span></a>
+                                        </volist>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            </volist>
+                           
+                            <li class="last_li"><a href="{$v.url}">查看更多》</a></li>
+                        </ul>
+                       </volist>
+                        <script>
+                            $(function(){
+                                $('#news_ul li').hover(function(){
+                                    $(this).addClass('act').siblings().removeClass('act');
+                                    var index = $(this).index();
+                                    $('#news_ul_box ul').eq(index).show().siblings().hide();
+                                })
+                            })
+                        </script>
+                        <style type="text/css">
+                            .last_li{width: 120px; height: 40px; margin:20px auto 0; background:#126DCA; padding:0!important; text-align: center; line-height: 40px;font-size: 16px;border-radius: 4px;}
+                            .last_li a{color:#fff;}
+                            
+                            .melting-left-news-list .melting-left-news-list-ul li{
+                              font-weight: 100;
+                              text-align: center;
+                              line-height: 56px;
+                              display: block;
+                              color: #000;
+                              font-size: 18px;
+                               width: 100px;
+                              float: left;
+                              cursor: pointer;
+                            }
+                            .melting-left-news-list .melting-left-news-list-ul .act{
+                              border-bottom: 1px solid #126dca;
+                              color: #126dca;
+                            }
+                            #news_ul_box ul{display: none;}
+                            #news_ul_box ul:first-child{display: block;}
+                        </style>
+
+
+                    </div>
+                </div>
+            </div>
+                
+            <include file="Public:right" />
+
+        </div>
+    </div>
+</div>
+
+<script src="__STYLE__/home/js/jquery.SuperSlide.2.1.1.source.js"> </script>
+<script>
+    jQuery(".melting-right-cm").slide({mainCell:".melting-right-cm-ul",scroll:1,autoPage:true,effect:"left",autoPlay:true,vis:1,delayTime:500,trigger:"click",prevCell:'.melting-right-cm_back', nextCell:'.melting-right-cm_next'});
+
+</script>
+<include file="Public:bottom" />

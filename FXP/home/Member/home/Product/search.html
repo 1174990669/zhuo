@@ -1,0 +1,83 @@
+<include file="Public:header" />
+    <section class="P_section_one">
+           <include file="Public:banner" />
+        <!-- <div class="container-fluid"> -->
+        <div class="container container_img">
+            <img class="con_img" src="/Uploads/image/2018-07-11/5b45a2d8dd149.jpg" alt="200x120" style="top:-88px;">
+            <div class="div">
+                <div class="d_left">
+                    <p class="L_p cli1"><a href="javascript:;">Product classification <span id="span_html">-</span></a></p>
+                    <div class="d_top">
+                    <volist name="left_navis" id="v">
+                        <div class="act <if condition='$v[id] eq $column_info[id]'>active</if>"><a href="{$v.url}">- {$v.name} <span>></span></a></div>
+                     </volist>
+                    </div>
+                    <p class="L_p cli2"><a href="javascript:;">Classification industry <span id="span_html2">-</span></a></p>
+                    <div class="d_bottom">
+                        <volist name="industry" id="v">
+                        <if condition="$_GET['cid'] neq ''">
+                        <div class="act <if condition='$v[id] eq $_GET[hid]'>active</if>"><a href="/product/search/hid/{$v.id}/cid/{$_GET['cid']}.html">- {$v.name} <span>></span></a></div>
+                        <else />
+                         <div class="act <if condition='$v[id] eq $_GET[hid]'>active</if>"><a href="/product/search/hid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                         </if>
+                     </volist>
+                    </div>
+                    <!-- <img src="images/icon/jh.png" alt="40x40"> -->
+                    <p class="L_p cli3"><a href="javascript:;">Classification by size <span id="span_html3">+</span></a></p>
+                     <div class="d_size">
+                    <volist name="size" id="v">
+                        <if condition="$_GET['hid'] neq ''">
+                        <div class="act <if condition='$v[id] eq $_GET[cid]'>active</if>"><a href="/product/search/hid/{$_GET['hid']}/cid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                        <else />
+                           <div class="act <if condition='$v[id] eq $_GET[cid]'>active</if>"><a href="/product/search/cid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                         </if>
+                     </volist>
+                     </div>
+                </div>
+             <include file="Public:left" />
+            </div>
+            <div class="div d_right">
+                <ul class="ul_tit">
+                    <li><b>{$column_info.name}</b><div class="d_ri"><img src="__STYLE__/home/images/product/icon.jpg" alt="">&nbsp;
+                    <a href="/en">Home</a>
+                     
+                     > <a href="javascript:;">search result</a>
+                     
+                     </div></li>
+                </ul>
+                <div class="d_cli1 div_cent">
+                    <div class="row pad_20 details">
+                   <volist name="product_list" id="v">
+                        <div id="2" class="col-xs-4 col-md-4">
+                            <div class="width_1">
+                                <a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}" title="{$v.name}" style="width:160px;height:160px;"></a>
+                            </div>
+                            <div class="div_solid">{$v.name}</div>
+                        </div>
+                    </volist>
+                    </div>
+                    <div id="div_hide" class="text-center">
+                        <ul class="pagination">
+                           {$pagelist}
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+
+    <script>
+        $('.cli1').click(function(){
+            $('.d_top').toggleClass('remo')
+        })
+        $('.cli2').click(function(){
+            $('.d_bottom').toggleClass('remo')
+        })
+          $('.cli3').click(function(){
+            $('.d_size').toggleClass('remo')
+        })
+    </script>
+ <include file="Public:bottom" />
+ 

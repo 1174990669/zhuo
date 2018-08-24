@@ -1,0 +1,57 @@
+<include file="Public:header" />
+	<div style="background: url(__STYLE__/home/images/find_det_ban.png)no-repeat center top ;height: 220px;" class="sever_gs_banner">
+	    <div class="wid1100 ">
+	        <a href="/">首页</a>
+	        <volist name="bread_list" id="v">
+	          / <a href="{$v.url}">{$v.name}</a>
+	         </volist>
+	       / <a href="">{$info.name}</a>
+	    </div>
+	</div>
+	<div class="w100 partner">
+		<div class="wid1100">
+			<div class="partner_top find_det_box">
+				<dl>
+					<dt><img src="{$info.list_img}" /><i></i></dt>
+					<dd>
+						<h1>{$info.name}</h1>
+						<p><span>投资领域：</span>{$info.sub_name}</p>
+						<p class="find_tel"><span>热线电话：</span>{:C('WEB_PHONE')}</p>
+						<a href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank"><i></i>立即约谈</a>
+					</dd>
+				</dl>
+			</div>
+   		</div>
+	</div>
+	<div class="w100  melting" >
+		<div class="wid1100 clear">
+			<div class="melting-left fl">
+	           <div class="melting-left-news-list">
+	           		<div class="jieshao_box find_detail">
+	           			<h3 class="jieshao_h3 h3border"><span>机构介绍</span></h3>
+	           		      {$info.content}
+	           			<h3 class="jieshao_h3 h3border"><span>投资地区</span></h3>
+	           			{$info.content1}
+	           			<h3 class="jieshao_h3 h3border"><span>投资领域</span></h3>
+	           			{$info.content2}
+	           			<h3 class="jieshao_h3 h3border"><span>资方实力</span></h3>
+	           			{$info.content3}
+	           			<h3 class="jieshao_h3 h3border"><span>成功案例</span></h3>
+	           			{$info.content4}
+	           		</div>
+	           </div>
+	        </div>
+	        <div class="melting-right fr">
+	        	<div class="melting-right-div melting-right-div2">
+	        		<div class="find_detail2">
+	        			<h3 class="melting-right-div-h"><span>热门机构</span></h3>
+	        			<volist name="recommand_article_list" id="v">
+	        			<a href="{$v.url}"><img src="{$v.list_img}" />{$v.name}</a>
+	        			</volist>
+	        		</div>
+	        	</div>
+	        </div>
+        </div>
+	</div>
+<include file="Public:bottom_banner" /> 
+<include file="Public:bottom" />

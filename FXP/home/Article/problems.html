@@ -1,0 +1,64 @@
+<include file="Public:header" />
+    <style>
+        .section_one .d_img{position: relative;}
+        .section_one .d_img .div_absou{position: absolute;top:50px;left: 50%;z-index: 2;color: #1e50ae;font-weight: 600;}
+        .section_one .d_img .H_fff h3{font-weight: 600;color:#fff;font-family: "宋体";}
+        .section_one .d_img .H_fff h3:after{content:'';position:absolute;border-bottom: 1px solid #fff;bottom:-10px;width: 70px;left:50%;transform: translate(-50%);}
+        .section_one .top_24 .B_fff .p_bor{position: relative;border-bottom: 1px solid #eaeaea;color:#007ac3;font-weight: 600;height: 40px;line-height: 40px; }
+        .section_one .top_24 .B_fff .p_bor:after{content:'';position:absolute;width: 100px;bottom:0;height: 2px;background:#007ac3;left: 0; }
+        .section_one .top_24 .B_fff .div_product{}
+        .pagination>li{display: inline-block;}
+        .pagination>li>a, .pagination>li>span{border:none;}
+        .pagination>li>a:hover{background: #dab866;color:#fff;}
+        .pagination>li .active{background: #dab866;color:#fff;}
+        .section_one .top_24 .B_fff .div_product .Li_div{padding-top: 20px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI{display:inline-block;vertical-align: top;height: 130px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .wi_30{width:22%;}
+        .section_one .top_24 .B_fff .div_product .Li_div .wi_69{width:77%;border-bottom:1px dashed #eaeaea;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI h4{color:#fda102;padding-top:8px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI p{color:#666;padding-top:8px;line-height: 26px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI img{width:180px;height:130px;}
+        /*.section_one .top_24 .R_w9{width:90%;margin:0 auto;}*/
+        .section_one .top_24 .R_w9 .d_contact{}
+        .section_one .top_24 .R_w9 .d_contact ol{}
+        .section_one .top_24 .R_w9 .d_contact ul{}
+        .section_one .top_24 .R_w9 .d_contact li{width: 24%;height:68px;line-height:68px;border-bottom:1px solid #eaeaea;vertical-align: top;}
+        .section_one .top_24 .R_w9 .d_contact ul>li:nth-of-type(3){width:52%;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+        .section_one .top_24 .R_w9 .d_contact ul li{font-size:14px;color: #999;}
+
+    </style>
+    <section class="section_one">
+        <include file="Public:banner" />
+        <div class="container-fluid top_24 back_eee">
+            <div class="container">
+                 <include file="Public:bread" />
+                <div class="row clearfix bacl_fff R_w9">
+                    <div class="col-xs-12 col-md-12 B_fff">
+                        <div class="d_contact">
+                            <ol>
+                                <li>职位名称</li>
+                                <li>职位分类</li>
+                                <li class="hidden-xs">工作内容</li>
+                            </ol>
+                            <volist name="article_list" id="v">
+                            <a href="{$v.url}">
+                                <ul class="ul_01">
+                                
+                                    <li>{$v.name}</li>
+                                    <li>{$v.sub_name}</li>
+                                    <li class="hidden-xs">{$v.sub_content}</li>
+                                </ul>
+                            </a>
+                          </volist>
+                        </div>
+                        <div id="div_hide" class="text-center">
+                            <ul class="pagination">
+                               {$pagelist}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<include file="Public:bottom" />

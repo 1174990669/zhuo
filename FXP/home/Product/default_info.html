@@ -1,0 +1,161 @@
+<include file="Public:header" />
+<link rel="stylesheet" href="__STYLE__/home/css/main.css">
+    <style>
+        .section_one .d_img{position: relative;}
+        .section_one .d_img .div_absou{position: absolute;top:50px;left: 50%;z-index: 2;color: #1e50ae;font-weight: 600;}
+        .section_one .d_img .div_absou h2{font-weight: 600;}
+        .section_one .d_img .div_absou h3{font-weight: 600;padding:8px 0;}
+        .section_one .d_img .div_absou h4{font-weight: 600;}
+        .section_one .d_img .div_absou span{color: #fda102;} 
+    </style>
+ 
+ 
+    <section class="section_one">
+        <include file="Public:banner" />
+        <div class="container-fluid top_24 back_eee">
+            <div class="container">
+                <include file="Public:bread" />
+                <div class="row clearfix bacl_fff">
+                    <div class="col-xs-12 col-md-2 pad_no hidden-xs">
+                       <include file="Public:left" />
+                    </div>
+                    <div class="col-xs-12 col-md-10 B_fff">
+                        <div class="warp">
+                            <div class="main_1100 clearfix">
+                                <div class="main-right fr">
+                                    <div class="pro_cont clearfix">
+                                        <div class="pro_cont">
+                                            <div class="tzs-cp-con">
+                                            <if condition="$info[img_list][0] neq ''">
+                                             <div style="display: none; background-image: url({$info[img_list][0]['src_img']}); background-position: -250px -81px; background-size: 130% 130%;" id="blowIng"><img src="" alt=""></div><!--高清图-->
+                                                <div class="pro-bigimag">
+                                                    <div class="big-div hidden-xs" style="display: none; left: 250px; top: 81px;"></div>
+                                                    <div class="addgb"></div><!--移动鼠标背景-->
+                                                    <img src="{$info[img_list][0]['src_img']}" id="divImg" alt=""><!--大图-->
+                                                </div>
+                                            <else />
+                                                <div style="display: none; background-image: url({$info.list_img}); background-position: -250px -81px; background-size: 130% 130%;" id="blowIng"><img src="" alt=""></div><!--高清图-->
+                                                <div class="pro-bigimag">
+                                                    <div class="big-div hidden-xs" style="display: none; left: 250px; top: 81px;"></div>
+                                                    <div class="addgb hidden-xs"></div><!--移动鼠标背景-->
+                                                    <img src="{$info.list_img}" id="divImg" alt="" ><!--大图-->
+                                                </div>
+                                            </if>    
+                                                <div class="pro-name  ">
+                                                    <h3 class="pro-name-h3">{$info.name}</h3>
+                                                    <div class="pro-name-p01">{$info.sub_content}</div>
+                                                   <if condition="$info[img_list][0] neq ''">
+                                                    <div class="pro-name-div">
+                                                        <div class="" style="width: 252px;height:76px;margin: 0 auto;overflow: hidden;position: relative">
+                                                            <ul class="pro-div-uls" style="width: 90px; left: 0px;">
+                                                            <volist name="info.img_list" id="v">
+                                                                <li><img src="{$v.src_img}" alt=""></li>
+                                                             </volist>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="prev div-click div-prev hidden-xs"></div>
+                                                        <div class="next div-click div-next hidden-xs"></div>
+                                                    </div>
+                                                    </if>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="detail_txt">
+                                        <h2 class="detail_txt_tit"><span>产品详情</span></h2>
+                                        <div>
+                                          {$info.content}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <include file="Public:bottom" />
+
+<script type="text/javascript">
+
+    $(".pro-div-uls").width($(".pro-div-uls li").length*$(".pro-div-uls li").width());
+    var c = 0;
+    function lunp(a, c) {
+
+        var arr = [];
+        var lunpLI = $(a).parents(".pro-name-div").find(".pro-div-uls").find("li");
+        var act = $(a).parents(".pro-name-div").find(".pro-div-uls").find("li.act").index();
+        var left=$(".pro-div-uls li").width()*c;
+
+        $(".pro-div-uls").css("left",-left+"px");
+        var src = $(".pro-div-uls").find("li").eq(c).find("img").attr("src");
+        $("#divImg01").attr("src",src)
+        if(left>$(".pro-div-uls").width()-$(".pro-div-uls li").width()){
+            $(".pro-div-uls").css("left",0+"px");
+        }
+    }
+    //左右按钮点击事件
+    $(".div-next").click(function () {
+        var par=$(this).parents(".pro-name-div").find(".pro-div-uls").find("li").length-3;
+
+        if (c == par) {
+            c = 0
+        } else {
+            c++;
+        }
+        var $tihs = $(this);
+
+        lunp($tihs, c)
+    })
+    $(".div-prev").click(function () {
+        var par=$(this).parents(".pro-name-div").find(".pro-div-uls").find("li").length-3;
+
+        if (c == 0) {
+            c = par
+        } else {
+            c--;
+        }
+        var $tihs = $(this);
+        lunp($tihs, c)
+    })
+
+    $(function()
+    {
+        $(".pro-div-uls li").mousemove(function(){
+            var src=$(this).find("img").attr("src");
+            $("#divImg").attr("src",src);
+            return false;
+        })
+
+        $(".pro-bigimag").hover(function(){
+            $(".big-div").show();
+            var srcImg=$("#divImg").attr("src");
+
+            $("#blowIng").show().css("backgroundImage","url("+srcImg+")")
+            return false;
+        },function(){
+            $(".big-div").hide();
+            $("#blowIng").hide();
+            return false;
+        });
+        var box_x = $(".pro-bigimag").offset().left;
+        var box_y = $(".pro-bigimag").offset().top;
+        $(".addgb").mousemove(function(e){
+            var mou_y = e.clientY + document.body.scrollTop;
+            var mou_x = e.clientX + document.body.scrollLeft;
+            var x = box_x - mou_x;
+            var y = box_y - mou_y;
+            var s=e.offsetX-$(".big-div").width()/2;
+            var d=e.offsetY-$(".big-div").height()/2;
+            s=s<0?0:s>$(".addgb").width()-$(".big-div").width()?$(".addgb").width()-$(".big-div").width():s;
+            d=d<0?0:d>$(".addgb").height()-$(".big-div").height()?$(".addgb").height()-$(".big-div").height():d;
+            $(".big-div").css({"left":s ,"top":d});
+            $("#blowIng").css({"backgroundPosition-x":-s*1,"backgroundPosition-y":-d*1,"backgroundSize":"130% 130%"})
+            return false;
+        })
+    })
+
+</script></body></html>

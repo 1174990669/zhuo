@@ -1,0 +1,146 @@
+<include file="Public:header" />
+    <script src="__STYLE__/home/js/jquery-2.1.3.min.js"> </script>
+<link type="text/css" rel="stylesheet" href="/Public/validform/validate.css"/>
+<script type="text/javascript" src="/Public/validform/validform_v5.3.2.js"></script>
+<script type="text/javascript" src="/Public/layer/layer.js"></script>
+<script type="text/javascript" src="/Public/common/jquery.submit.js"></script>
+<script type="text/javascript" src="/Public/common/layer.func.js"></script>
+    <div class="chuangye_ban"><img src="{$banner_list[0]['src_img']}"/></div>
+    <!--创业项目 企业用户-->
+    <div class="chuangye_one">
+      <ul class="wid1100">
+        <li><img src="__STYLE__/home/images/cy_icon1.png" />百万创业项目</li>
+        <li><img src="__STYLE__/home/images/cy_icon2.png" />百万家投融机构</li>
+        <li><img src="__STYLE__/home/images/cy_icon3.png" />百万家企业公司</li>
+        <li><img src="__STYLE__/home/images/cy_icon4.png" />100万企业用户</li>
+      </ul>
+    </div>
+    <!--技术优势-->
+    <div class="chuangye_two w100">
+      <div class="wid1100">
+        <div class="index-title">
+                <h3 class="index-title-name index-title-name-hei"><span class="">鑫泰投资</span>平台优势</h3>
+                <p class="index-title-p">打造国高内一流的商业战略咨询平台</p>
+            </div>
+            <div class="cy_youshi">
+              <ul>
+                <li>
+                  <img src="__STYLE__/home/images/ys_icon1.png" />
+                  <h4>用户服务</h4>
+                  <p>平台容纳百万创业项目，精准创业案例分析，对接百万家投融机构，拥有超百万家企业公司有强烈需求的注册会员。</p>
+                </li>
+                <li>
+                  <img src="__STYLE__/home/images/ys_icon2.png" />
+                  <h4>高回报率</h4>
+                  <p>拥有多级合作伙伴政策及丰厚合作回报。</p>
+                </li>
+                <li>
+                  <img src="__STYLE__/home/images/ys_icon3.png" />
+                  <h4>品牌沉淀</h4>
+                  <p>超过100万企业用户的信赖与支持。</p>
+                </li>
+                <li>
+                  <img src="__STYLE__/home/images/ys_icon4.png" />
+                  <h4>平台支持</h4>
+                  <p>技术支持，运营支持，资源共享，精准定位。</p>
+                </li>
+              </ul>
+            </div>
+      </div>
+    </div>
+    <!--合作伙伴-->
+    <div class="w100">
+      <div class="wid1100">
+        <div class="index-title">
+                <h3 class="index-title-name index-title-name-hei chuangye_tit"><span class="">我们需要</span>那些合作伙伴？</h3>
+                <p class="index-title-p">打造国高内一流的商业战略咨询平台</p>
+            </div>
+            <div class="huoban">
+              <ul>
+                <li>
+                  <div class="huoban_img">
+                    <img src="__STYLE__/home/images/hb_img.png" />
+                    <h5>产品服务合作伙伴</h5>
+                  </div>
+                  <p>拥有一定的客户基础和优质的用户产品服务，为创业公司提供服务的企业。</p>
+                </li>
+                <li>
+                  <div class="huoban_img">
+                    <img src="__STYLE__/home/images/hb_img1.png" />
+                    <h5>技术与实施合作伙伴</h5>
+                  </div>
+                  <p>经认证的某一领域为终端客户提供技术实施服务。包括IT综合服务商，系统集成商、有实施能力的网络技术公司、软件公司等。</p>
+                </li>
+                <li>
+                  <div class="huoban_img">
+                    <img src="__STYLE__/home/images/hb_img2.png" />
+                    <h5>生态服务伙伴</h5>
+                  </div>
+                  <p>致力于全方位构建公司生态伙伴体系架构，满足创业投融全周期阶段业务需求的伙伴供应，实现共赢。</p>
+                </li>
+              </ul>
+            </div>
+      </div>
+    </div>
+    <div class="w100 index-cooperation">
+        <div class="wid1100 clear">
+            <div class="index-title">
+                <h3 class="index-title-name index-title-name-hei index-title-name-bai"><span class="">资源汇聚</span>合作伙伴</h3>
+                <p class="index-title-p" style="color: #818181;">打造国高内一流的商业战略咨询平台</p>
+            </div>
+            <div class="clear">
+              <volist name="partner_list" id="v">
+            <a href="{$v.url}" class="zhao-proiectlist"><img src="{$v.list_img}" alt="{$v.name}"></a>
+            </volist>
+        </div>
+            </div>
+            <a href="/hezuohuoban.html" class="index-link-move">查看更多</a>
+        </div>
+    </div>
+    <!--在线留言-->
+    <div class="w100 massage">
+      <div class="wid1100">
+        <div class="massage_in">
+           <div class="index-title">
+                  <h3 class="index-title-name index-title-name-hei"><span class="">诚邀加盟</span>在线留言</h3>
+                  <p class="index-title-p" style="color: #fff;">打造国高内一流的商业战略咨询平台</p>
+              </div>
+              <div class="massage_con">
+                <h6>留下您的联系信息</h6>
+                <form action="__SELF__" method="post"  class="valid_form">
+                  <div class="clear">
+                    <div class="massage_top clear">
+                      <dl>
+                        <dt>姓名<i>*</i></dt>
+                        <dd><input type="text" placeholder="请输入您的姓名" name="name" /></dd>
+                      </dl>
+                      <dl>
+                        <dt>公司名称<i>*</i></dt>
+                        <dd><input type="text" placeholder="请输入您的公司名称" name="company"  /></dd>
+                      </dl>
+                      <dl>
+                        <dt>公司网址</dt>
+                        <dd><input type="text" placeholder="请输入您的公司网址" name="url" /></dd>
+                      </dl>
+                    </div>
+                    <div class="massage_top clear">
+                      <dl>
+                        <dt>联系方式<i>*</i></dt>
+                        <dd><input type="text" placeholder="请输入您的电话号码" name="phone" /></dd>
+                      </dl>
+                      <dl>
+                        <dt>电子邮箱</dt>
+                        <dd><input type="text" placeholder="请输入电子邮箱地址" name="email" /></dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="massage_btn">
+                    <input type="reset" value="重置" />
+                    <button>提交</button>
+                  </div>
+                </form>
+              </div>
+        </div>
+      </div>
+    </div>
+<include file="Public:bottom" />

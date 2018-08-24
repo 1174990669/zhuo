@@ -1,0 +1,27 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+<div class="w1000">
+    <include file="Public:bread" />
+    <div class="content-box over">
+        <include file="Public:left" />
+        <div class="content-right">
+            <div class="news-two-list">
+                <h1>{$column_info.name}</h1>
+                <volist name="article_list" id="v">
+                <dl>
+                    <dt><img src="{$v.list_img}" alt=""></dt>
+                    <dd>
+                        <h3>{$v.name}</i></h3>
+                        <p>{$v.sub_content}</p>
+                        <a href="{$v.url}">查看更多>></a>
+                    </dd>
+                </dl>
+                </volist>
+                <div class="page page2">
+                  {$pagelist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:bottom" />

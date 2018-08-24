@@ -1,0 +1,34 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+ 
+<volist name="product_list" id="v" mod="2" >
+<if condition="$mod neq 1">
+<div class="w1000">
+    <div class="app-box">
+        <div class="app-left">
+            <h3>{$v.name}</h3>
+            <p>{$v.text5}</p>
+        </div>
+        <div class="app-right" style="padding-left: 100px;">
+            <img src="{$v.list_img}" alt="{$v.name}"  >
+        </div>
+    </div>
+</div>
+
+<else />
+<div class="w100" style="background: #f3f0f3;">
+    <div class="w1000">
+        <div class="app-box app-img2-box">
+            <div class="app-right">
+                <img src="{$v.list_img}" alt="{$v.name}"  >
+            </div>
+            <div class="app-left app-img2">
+                <h3>{$v.name}</h3>
+                <p>{$v.text5}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</if>
+</volist>
+<include file="Public:bottom" />

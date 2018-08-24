@@ -1,0 +1,37 @@
+<include file="Public:header" />
+<div class="w1000">
+    <div class="index-one" style="border: 0;margin-bottom: 0;">
+        <include file="Public:search" />
+    </div>
+       <div class="top-nav">
+        <p>当前位置：
+            <a href="/">首页</a>
+            <volist name="bread_list" id="v">
+              &nbsp;&gt;&nbsp;<a href="{$v.url}">{$v.name}</a>
+          </volist>
+          &nbsp;&gt;&nbsp;<a>{$info.name}</a>
+        </p>
+    </div>
+</div>
+<div class="w1000">
+    <div class="ts-byw" style="background: #fff4e0;">
+        {$info.content}
+        <div class="byw-news">
+            <dl>
+                <dt>
+                    <img src="{$info.src_img}" alt="">
+                    <ul>
+                    <volist name="recommand_article" id="v">
+                        <li><a href="{$v.url}">{$v.name}</a></li>
+                    </volist>
+                    </ul>
+                </dt>
+                <dd>
+                    <embed wmode="opaque" src="{$info.video}" allowfullscreen="true" quality="high" width="460" height="300" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+                </dd>
+            </dl>
+        </div>
+      {$info.content1}
+    </div>
+</div>
+<include file="Public:bottom" />

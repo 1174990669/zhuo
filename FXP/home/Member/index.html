@@ -1,0 +1,42 @@
+<include file="Public:header" />
+		<div class="wid1100">
+			<div class="subnav">
+				 <a href="/">首页</a><span>/</span>
+                <a href="{:U('Member/issueitem')}">个人中心</a><span>/</span>
+                <a href="{:U('Member/index')}">我的项目</a>
+			</div>
+			<div class="main_box">
+				<div class="main_l">
+					<ul>
+						<li><a href="{:U('Member/issueitem')}">发布项目</a></li>
+                        <li class="actt"><a href="{:U('Member/index')}">我的项目</a></li>
+						<li><a href="{:U('Member/passwordalter')}">设置密码</a></li>
+					</ul>
+				</div>
+				<div class="main_r">
+					<div class="main_rcon">
+						<h2><span>我的项目</span></h2>
+						<strong></strong>
+						<div class="me_project">
+							<table>
+								<tr>
+									<th>项目名称</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr>
+								<volist name="list" id="v">
+								<tr>
+									<td>{$v.title}</td>
+									<td><if condition="$v['status'] eq 0">审核中<elseif condition="$v['status'] eq 1" />审核通过<else />审核失败</if></td>
+
+									<td><span><a href="{:U('Member/companyinfo',array('id'=>$v['id']))}" style="color:#fff;">修改</a></span><span><a href="{:U('Member/delete',array('id'=>$v['id']))}" style="color:#fff;" onclick="return confirm('确定要删除吗？')">删除</a></span></td>
+								</tr>
+								</volist>
+							</table>
+							 <p class="pages" style="margin-top:20px;">{$pagelist}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<include file="Public:bottom" />

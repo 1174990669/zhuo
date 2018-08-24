@@ -1,0 +1,23 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+<div class="w1000">
+    <include file="Public:bread" />
+    <div class="content-box">
+        <div class="guide">
+            {$info.content}
+            <h1 class="cont-public-title"><p class="active1 noline">常见问题</p><a href="/changjianwenti.html"><img src="/Style/home/images/more-img.png" alt=""></a></h1>
+            <div class="index-two guide-wt">
+            <volist name="case_list" id="v">
+                <div class="index-two-left">
+                    <ul>
+                    <volist name="v" id="vv">
+                        <li><a href="{$vv.url}">{$vv.name}</a></li>
+                    </volist>
+                    </ul>
+                </div>
+           </volist>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:bottom" />

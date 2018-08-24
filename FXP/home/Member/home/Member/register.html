@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="__STYLE__/home/css/index.css" />
+<include file="Public:meta" />
+</head>
+<body>
+
+<div class="login">
+	<div class="login-content">
+		<h3>会员注册</h3>
+		<div class="dz sgin">
+			<form action="{:U('member/register')}" method="post" class="valid_form">
+				<span><input type="text" name="phone" /><i>手机号</i></span>
+				<span><input type="password" name="password" /><i>密码</i></span>
+				<span><input type="password" name="passwords" /><i>密码</i></span>
+				<span><input type="text" class="input" id="code" name="verify" maxlength="4" placeholder="填写右侧的验证码" /><i>验证码</i><img src="{:U('Message/verify')}" width="125" height="32" id="verify_img" class="passcode" onclick='this.src=this.src+"?"'/></span>
+				<button>注 册</button>
+			</form>
+		</div>
+	</div>
+	<div class="beian">
+		{:C('WEB_ICP')}
+	</div>
+</div>
+
+<script>
+function login(){
+	var div = document.getElementsByClassName("login")[0];
+	var bodyH = document.documentElement.clientHeight;
+	
+	div.style.height = bodyH + "px";
+}
+login();
+</script>
+</body>
+</html>

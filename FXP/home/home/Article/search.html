@@ -1,0 +1,35 @@
+<include file="Public:header" />
+<include file="Public:banner" />
+<div class="w1000">
+<div class="index-one" style="border: 0;margin-bottom: 0;">
+       <include file="Public:search" />
+    </div>
+    <div class="top-nav">
+        <p>当前位置：
+            <a href="/">首页</a>
+              &nbsp;&gt;&nbsp;<a>搜索结果</a>
+        </p>
+    </div>
+    <div class="content-box over">
+        <include file="Public:left" />
+        <div class="content-right">
+            <div class="news-two-list">
+                <h1>搜索结果（{$_GET['keywords']}）</h1>
+                <volist name="article_list" id="v">
+                <dl>
+                    <dt><img src="{$v.list_img}" alt=""></dt>
+                    <dd>
+                        <h3>{$v.name}</i></h3>
+                        <p>{$v.sub_content}</p>
+                        <a href="{$v.url}">查看更多>></a>
+                    </dd>
+                </dl>
+                </volist>
+                <div class="page page2">
+                  {$pagelist}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="Public:bottom" />

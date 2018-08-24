@@ -1,0 +1,96 @@
+<include file="Public:header" />
+        <div class="wid1100">
+            <div class="subnav">
+                <a href="/">首页</a><span>/</span>
+                <a href="{:U('Member/issueitem')}">个人中心</a><span>/</span>
+                <a href="{:U('Member/issueitem')}">发布项目</a>
+            </div>
+            <div class="main_box">
+                <div class="main_l">
+                    <ul>
+                        <li class="actt"><a href="{:U('Member/issueitem')}">发布项目</a></li>
+                        <li><a href="{:U('Member/index')}">我的项目</a></li>
+                        <li><a href="{:U('Member/passwordalter')}">设置密码</a></li>
+                    </ul>
+                </div>
+                <div class="main_r">
+                    <div class="main_rcon">
+                        <h2><span>发布项目</span></h2>
+                        <strong></strong>
+                        <div class="main_conbot">
+                            <form action="__SELF__" method="post" class="valid_form">
+                                <dl>
+                                    <dt><i>*</i>项目名称:</dt>
+                                    <dd><input type="text" placeholder="请输入项目名称" name="title" /></dd>
+                                </dl>
+                                <dl>
+                                    <dt><i>*</i>项目简介:</dt>
+                                    <dd><textarea cols="14" rows="3" placeholder="请简单的介绍一下您的项目" name="sub_content"  ></textarea></dd>
+                                </dl>
+                                <dl>
+                                    <dt>市场分析及解决痛点:</dt>
+                                    <dd><textarea cols="14" rows="3" placeholder="请简单的分析一下市场与痛点" name="fenxi"></textarea></dd>
+                                </dl>
+                                <dl>
+                                    <dt>商业团队:</dt>
+                                    <dd><textarea cols="14" rows="3" placeholder="请简单的介绍一下您的团队" name="team"></textarea></dd>
+                                </dl>
+                                <dl>
+                                    <dt>融资需求:</dt>
+                                    <dd><input type="text" placeholder="请输入您的融资需求" name="xuqiu" /></dd>
+                                </dl>
+                                <dl>
+                                    <dt>其他资料或需求补充:</dt>
+                                    <dd><textarea cols="14" rows="3" placeholder="" name="buchong"></textarea></dd>
+                                </dl>
+                                <dl>
+                                    <dt><i>*</i>是否有详细的商业计划书？:</dt>
+                                    <dd class="jihuas"><p class="firsti"><i></i>是</p><p><i></i>否</p></dd>
+                                </dl>
+                                <dl>
+                                    <dt><i>*</i>项目所处阶段:</dt>
+                                    <dd class="jieduan">
+                                        <p class="firsti"><i></i>种子期</p>
+                                        <p><i></i>天使轮</p>
+                                        <p><i></i>风险轮</p>
+                                        <p><i></i>其他</p>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt><i>*</i>项目对接人姓名:</dt>
+                                    <dd><input type="text" placeholder="请输入项目对接人姓名" name="name"/></dd>
+                                </dl>
+                                <dl>
+                                    <dt><i>*</i>项目对接人联系电话:</dt>
+                                    <dd><input type="tel" placeholder="请输入项目对接人联系电话" name="phone"/></dd>
+                                </dl>
+                                <dl>
+                                <input type="hidden" value="{$_SESSION['webcms']['member_info']['id']}" name="member_id">
+                                <input type="hidden" value="是" id="jihuashu" name="jihuashu">
+                                <input type="hidden" value="种子期" id="jieduan" name="jieduan">
+                                    <dt></dt>
+                                    <dd style="width: 520px;">
+
+                                        <button>提交</button><span>带*为必填内容</span>
+                                    </dd>
+                                </dl>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function(){
+                $('.main_conbot dd p').click(function(){
+                    
+                    if($(this).parent("dd").hasClass("jihuas")){
+                       $("#jihuashu").val($(this).text())
+                    }else{
+                           $("#jieduan").val($(this).text())
+                    }
+                    $(this).addClass('firsti').siblings().removeClass('firsti');
+                })
+            })
+        </script>
+<include file="Public:bottom" />

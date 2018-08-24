@@ -1,0 +1,23 @@
+<script>
+	KindEditor.ready(function(K) {
+		var editor = K.editor({
+			allowFileManager : true,
+			afterBlur: function () { this.sync(); },
+			uploadJson : "{:U('Upload/index')}",
+			fileManagerJson : "{:U('Upload/filelist')}"
+		});
+		//--上传文件
+		K('.upload_file').click(function() {
+			var urlinput=$(this).attr('for')
+			editor.loadPlugin('insertfile', function() {
+				editor.plugin.fileDialog({
+					fileUrl : K('#'+urlinput).val(),
+					clickFn : function(url, title) {
+						K('#'+urlinput).val(url);
+						editor.hideDialog();
+					}
+				});
+			});
+		});
+	});
+</script>

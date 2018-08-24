@@ -1,0 +1,49 @@
+<include file="Public:header" />
+		<!--拍卖展览-->
+		<div class="content_box">
+			<include file="Public:bread" />
+			<div class="page_con">
+				<div class="zl_con zl_list">
+					<dl>
+						<dt class="fl">
+							<img src="{$info.list_img}" />
+						</dt>
+						<dd class="fl">
+							<a href="{:U('Auction/lists',array('id'=>$info['id']))}">{$info.name}</a>
+							<p>拍  卖 会： {$info.auction} </p>
+							<p>预展时间： {$info.time} </p>
+							<p>展拍地点：{$info.address}</p>
+							<p class="zl_num">总拍品数：<span>{$info.count} </span>件</p>
+						</dd>
+					</dl>
+				</div>
+				
+			</div>
+			<div class="page_con page_con1">
+				<div class="tulu">
+					<p class="fl">拍品图录</p>
+				<!-- 	<ul class="fl">
+					<li class="tulu_cur">按成交价</li>
+					<li>按图录号</li>
+				</ul> -->
+				</div>
+				<div class="zl_con zl_listbot">
+				<volist name="auction_list" id="v">
+					<dl>
+						<dt class="fl">
+							<img src="{$v.list_img}" />
+						</dt>
+						<dd class="fl">
+							<a href="{:U('Auction/details',array('id'=>$v['id']))}">{$v.name}</a>
+							<p>估价：{$v.gujia}RMB</p>
+							<p class="zl_num"><a href="{:U('Auction/details',array('id'=>$v['id']))}">查看详情</a></p>
+						</dd>
+					</dl>
+					</volist>
+					<div class="paging paging_1">
+						{$pagelist}
+					</div>
+				</div>
+			</div>
+		</div>
+<include file="Public:bottom" />

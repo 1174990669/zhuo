@@ -1,0 +1,189 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="__STYLE__/home/css1/main.css">
+<link rel="stylesheet" type="text/css" href="__STYLE__/home/css1/public.css">
+
+<div style="min-height: 680px;" class="center_box">
+<div class="server-nav">
+    <div class="server-nav-con font14">
+        <!---server-nav-con-fr-->
+        <div class="fl black6">
+           <div class="zhanlan_top">
+				<p><span>当前位置：</span><a href="/">主页</a> &gt; <a href="{:U('member/infoalter')}">个人信息</a></p>
+			</div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="user-center">
+        
+
+<div class="user-center-left font14">
+    <h2 class="font18 blackf">会员中心</h2>
+    <ul>
+        <li><a href="{:U('member/pat')}" class="black45">作品送拍</a></li>
+        <li><a href="{:U('member/bidding')}">委托竞买</a></li>
+        <li><a href="{:U('member/item')}">拍品收藏</a></li>
+        <li><a href="{:U('member/infoalter')}" class="black45 hover">个人信息</a></li>
+        <li><a href="{:U('member/logout')}">退出登录</a></li>
+    </ul>
+</div>
+
+
+        <!--user-center-left-->
+
+        <div class="user-center-right">
+            <div class="user-center-right-tit font18 blackf">个人信息</div>
+            <div class="blank10"></div>
+            <div class="user-center-right-txt font16 black6">
+                请完善您的个人信息，方便我们为您提供更好的服务，您所提供的个人资料，我们将会严格保密， 仅用于回答您的问题和评论，或用于用户资料更新
+            </div>
+            <!--user-center-right-txt-->
+            <div class="blank20"></div>
+            <div class="user-center-right-per">
+            <form method="post" action="{:U('Member/infoalter')}"  id="form1" name="form1">
+                <dl class="font14 black45">
+                    <dt>用户：</dt>
+                    <dd>
+                        <input type="text" readonly="" class="user-center-right-input1 font14 black45 round-5" id="txtName" value="{$user_info.nickname}"></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0">*</font> 姓名：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtRealName" value="{$user_info.truename}" name="truename"></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0">*</font> 手机号码：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtMobile" value="{$user_info.phone}" name="phone"></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0"></font>电话：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtPhone" value="{$user_info.tel}" name="tel"></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0">*</font> 常用邮箱：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtEmail" value="{$user_info.email}" name="email"><span style="color:red;float: initial;">绑定邮箱，用于找回密码</span></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0">*</font> 性别：</dt>
+                    <dd class="user-center-right-radio">
+                        <label>
+                            <input type="radio" name="sex" <if condition="$user_info['sex'] eq '男'">checked=""</if> value="男" class="">男</label>
+                        <label>
+                            <input type="radio" name="sex" value="女" class="" <if condition="$user_info['sex'] eq '女'">checked=""</if>>女</label>
+                    </dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0"></font>职业：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtOccupation" value="{$user_info.zhiye}" name="zhiye"></dd>
+                </dl>
+                <dl class="font14 black45">
+                    <dt><font class="blackf0">*</font> 详细地址：</dt>
+                    <dd>
+                        <input type="text" class="user-center-right-input2 font14 black45 round-5" id="txtAddress" value="{$user_info.address}" name="address"></dd>
+                </dl>
+              <!--   <dl class="font14 black45">
+                  <dt><font class="blackf0"></font>感兴趣品类：</dt>
+                  <dd>
+                      <div class="blank10"></div>
+                      <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="中国书画">
+                          </div>
+                          中国书画
+                      </div>
+                      footer-133
+                      <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="当代艺术">
+                          </div>
+                          当代艺术
+                      </div>
+                      footer-133
+                      <div class="footer-157 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="瓷器杂项">
+                          </div>
+                          瓷器杂项
+                      </div>
+                      footer-157
+                      <div class="blank10"></div>
+                      <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="佛造像">
+                          </div>
+                          佛造像
+                      </div>
+                      footer-133
+                      <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="珠宝翡翠">
+                          </div>
+                          珠宝翡翠
+                      </div>
+                      footer-133
+                      <div class="footer-157 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="珍贵钟表">
+                          </div>
+                          珍贵钟表
+                      </div>
+                      footer-157
+                      <div class="blank10"></div>
+                                              <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="名品手袋">
+                          </div>
+                          名品手袋
+                      </div>
+                      footer-157
+                                              <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="极品名酿">
+                          </div>
+                          极品名酿
+                      </div>
+                      footer-157
+                                              <div class="footer-157 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="养生精粹">
+                          </div>
+                          养生精粹
+                      </div>
+                      footer-157
+                      <div class="blank10"></div>
+                                              <div class="footer-133 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="陈年普洱">
+                          </div>
+                          陈年普洱
+                      </div>
+                      footer-157
+                                              <div class="footer-157 black3">
+                          <div class="piaochecked">
+                              <input name="Member_che" type="checkbox" style="height: 20px; width: 20px;" class="radioclass input" value="其他">
+                          </div>
+                          其他
+                      </div>
+                      footer-157
+                  </dd>
+              </dl> -->
+
+
+              
+                <dl class="font14 black45">
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <input type="submit"  class="user-center-right-but font16 blackf round-5" value="提交"></dd>
+                </dl>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<include file="Public:member_bottom" />

@@ -1,0 +1,9 @@
+<if condition="$meta">
+<title>{:C('WEB_SITE_NAME')}-{$meta.title}</title>
+<meta name="Keywords" content="{$meta.keywords}"/>
+<meta name="Description" content="{$meta.description}"/>
+<else/>
+<title>{:C('WEB_SITE_NAME')}-{:C('WEB_SEO_TITLE')}</title>
+<meta name="Keywords" content="{:C('WEB_SEO_KEYWORDS')}"/>
+<meta name="Description" content="{:C('WEB_SEO_DESCRIPTION')}"/>
+</if>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0035)http://www.hnouqier.com/Abouts.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class=" js csstransitions">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="viewport" content="width=device-width;minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no">
+        <meta name="applicable-device" content="pc,mobile">
+         <include file="Public:meta" />
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/css.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/animate.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/slick.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/flexslider.css">
+        <link rel="stylesheet" type="text/css" href="__STYLE__/home/css/responsive.css">
+        <script type="text/javascript" src="__STYLE__/home/js/jquery.min.js"></script>
+        <script type="text/javascript" src="__STYLE__/home/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="__STYLE__/home/js/jquery.flexslider-min.js"></script>
+        <script src="__STYLE__/home/js/Search.js" type="text/javascript"></script>
+        <script type="text/javascript" src="__STYLE__/home/js/jquery.SuperSlide.2.1.1.js" ></script>
+        <link rel="stylesheet" href="__STYLE__/home/css/layer.css" id="layui_layer_skinlayercss">
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="header_txt">
+                <div class="header_txt1">
+                     <span>{:C('WEB_COME')}</span>
+                    <p>
+                        <a href="javascript:void" onclick="SetHome(this,window.location)">设为首页</a> |
+                        <a href="javascript:void" onclick="shoucang(document.title,window.location)">加入收藏</a> |
+                        <a href="/lianxiwomen.html">联系我们</a>
+                    </p>
+                </div>
+            </div>
+            <div class="header_center">
+                <div class="logo"><img src="{:C('LOGO_IMAGE')}" title="" alt=""></div>
+                <div class="mune"><img src="__STYLE__/home/images/mune.png"></div>
+                <div class="header_tel">
+                    <p>24小时咨询热线：</p><span>13612701419</span></div>
+            </div>
+            <div class="nav_bg">
+                <div class="nav">
+                     <ul>
+                        <li>
+                            <a href="/">首页</a>
+                        </li>
+                        <volist name="header_navi" id="v">
+                        <li <if condition="$column_info['id'] eq $v['id']"> class="nav_active"</if>>
+                            <a href="{$v.url}">{$v.name}</a>
+                        </li>
+                      </volist>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="ny_banner"><img src="{$banner_list[0]['src_img']}" border="0"></div>

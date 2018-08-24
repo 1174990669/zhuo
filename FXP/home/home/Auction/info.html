@@ -1,0 +1,68 @@
+<include file="Public:header" />
+	<div style="height: 50px; background:#999;line-height: 50px;" class="sever_gs_banner">
+	     <div class="wid1100 ">
+	        <a href="/">首页</a>
+	          / <a href="{$top_column.url}">{$top_column.name}</a>
+	       / <a href="">{$info.name}</a>
+	    </div>
+	</div>
+	<div class="w100" style="background:#fff;">
+		<div class="wid1100">
+			<div class="find_pro_detail_top clear">
+				<dl>
+					<dt><img src="__STYLE__/home/images/find_head_img.png" /></dt>
+					<dd>
+						<h1>{$info.name}</h1>
+						<p class="font_weight"><span>融资需求：</span><strong>{$info.text1}</strong></p>
+						<p><span>所属行业：</span><strong>{$info.text2}</strong></p>
+						<p><span>融资方式：</span><strong>{$info.text3}</strong></p>
+						<p><span>所属地区：</span><strong>{$info.text4}</strong></p>
+						<p><span>项目简介：</span><strong>{$info.text5}</strong></p>
+						<a  href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank" class="yuetan"><i></i>立即约谈</a>
+					</dd>
+				</dl>
+			</div>
+   		</div>
+	</div>
+	<div class="w100  melting" >
+		<div class="wid1100 clear">
+			<div class="melting-left fl">
+	           <div class="melting-left-news-list">
+	           		<div class="jieshao_box find_detail">
+	           			<h3 class="jieshao_h3 h3border"><span>项目介绍</span></h3>
+	           			{$info.content}
+	           			<h3 class="jieshao_h3 h3border"><span>项目与运营</span></h3>
+	           			{$info.content1}
+	           			<h3 class="jieshao_h3 h3border"><span>发展前景</span></h3>
+	           			{$info.content2}
+	           			<h3 class="jieshao_h3 h3border"><span>为什么选择我们</span></h3>
+	           			{$info.content3}
+	           			<h3 class="jieshao_h3 h3border"><span>财务与融资</span></h3>
+	           			{$info.content4}
+	           		</div>
+	           </div>
+	        </div>
+	        <div class="melting-right fr">
+	        	<div class="melting-right-div melting-right-div2">
+	        		<div class="Interviewer">
+	        			<h5>该信息已委托鑫泰投资代发布</h5>
+	        			<p>
+	        				<img src="__STYLE__/home/images/head_22.png" />
+	        				联系人：{:C('WEB_REN')}
+	        			</p>
+	        			<a class="yuetan" href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank"><i></i>立即约谈</a>
+	        		</div>
+	        	</div>
+	        	<div class="melting-right-div melting-right-div2">
+	        		<div class="find_detail2">
+	        			<h3 class="melting-right-div-h"><span>同类项目</span></h3>
+	        			<volist name="recommand_article_list" id="v">
+	        			<a href="{:U('Auction/info',array('id'=>$v['id']))}"><img src="{$v.list_img}" />{$v.name}</a>
+	        		</volist>
+	        		</div>
+	        	</div>
+	        </div>
+        </div>
+	</div>
+<include file="Public:bottom_banner" />
+<include file="Public:bottom" />

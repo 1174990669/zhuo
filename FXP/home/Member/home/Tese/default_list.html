@@ -1,0 +1,55 @@
+<include file="Public:header" />
+    <section class="P_section_one">
+           <include file="Public:banner" />
+        <!-- <div class="container-fluid"> -->
+        <div class="container container_img">
+            <img class="con_img" src="{$top_column.home_img}" alt="200x120" style="top:-88px;">
+              <div class="div">
+                <div class="d_left">
+                    <p class="L_p cli1"><a href="#">{$top_column.name} <span>-</span></a></p>
+                    <div class="d_top">
+                    <volist name="left_navi" id="v">
+                        <div class="act <if condition='$column_info[id] eq $v[id]'>active</if>"><a href="{$v.url}">- {$v.name} <span>></span></a></div>
+                    </volist>
+                    </div>
+                </div>
+                   <include file="Public:left" />
+            </div>
+            <div class="div d_right">
+               <include file="Public:bread" />
+                <div class="d_cli1 div_cent">
+                    <div class="row pad_20 details">
+                   <volist name="article_list" id="v">
+                        <div id="2" class="col-xs-4 col-md-4">
+                            <div class="width_1">
+                                <a href="{$v.url}"><img src="{$v.list_img}" alt="{$v.name}" title="{$v.name}" style="width:160px;height:160px;"></a>
+                            </div>
+                            <div class="div_solid">{$v.name}</div>
+                        </div>
+                    </volist>
+                    </div>
+                    <div id="div_hide" class="text-center">
+                        <ul class="pagination">
+                           {$pagelist}
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+
+    <script>
+        $('.cli1').click(function(){
+            $('.d_top').toggleClass('remo')
+        })
+        $('.cli2').click(function(){
+            $('.d_bottom').toggleClass('remo')
+        })
+          $('.cli3').click(function(){
+            $('.d_size').toggleClass('remo')
+        })
+    </script>
+ <include file="Public:bottom" />
+ 

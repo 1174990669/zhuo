@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Utf-8" />
+<link rel="stylesheet" type="text/css" href="__CSS__/jump.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/base.css" />
+<title>温馨提示</title>
+</head>
+<body>
+<!--top begin-->
+<include file="Public:header"/>
+<div class="jumpbox">
+  <div class="jumppage">
+    <h2>温馨提示</h2>
+    <div class="p11">
+      <div class="content-box">
+	      <present name="message">
+		  <div class="ys-1">
+		  	<img src="__IMG__/cg.png" width="25" height="25"/>
+		  	<div class="mess">{$message}</div>
+	      </div>
+		  <else/>
+		  <div class="ys-1">
+		  	<img src="__IMG__/cw.png" width="25" height="25"/>
+		    <div class="mess">{$error}</div>
+	      </div>
+		  </present>
+	  </div>
+	  <div class="tz">
+	  	<br/>
+		<p><a id="href" href="{$jumpUrl}">页面将在<b id="wait" style="color:green;">{$waitSecond}</b>后跳转如果没有跳转请点击这里</a></p></div>
+    </div>
+  </div>
+</div>
+<include file="Public:bottom"/>
+<script type="text/javascript">
+(function(){
+var wait = document.getElementById('wait'),href = document.getElementById('href').href;
+var interval = setInterval(function(){
+	var time = --wait.innerHTML;
+	if(time <= 0) {
+		location.href = href;
+		clearInterval(interval);
+	};
+}, 1000);
+})();
+
+</script>
+</body>
+</html>

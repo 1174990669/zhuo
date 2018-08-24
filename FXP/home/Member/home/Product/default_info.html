@@ -1,0 +1,158 @@
+<include file="Public:headers" />  
+     <section class="P_section_one">
+           <include file="Public:banner" />
+        <!-- <div class="container-fluid"> -->
+        <div class="container container_img">
+            <img class="con_img" src="{$top_column.home_img}" alt="200x120" style="top:-88px;">
+            <div class="div">
+                <div class="d_left">
+                    <p class="L_p cli1"><a href="javascript:;">Product classification <span id="span_html">-</span></a></p>
+                    <div class="d_top">
+                    <volist name="left_navi" id="v">
+                        <div class="act <if condition='$v[id] eq $column_info[id]'>active</if>"><a href="{$v.url}">- {$v.name} <span>></span></a></div>
+                     </volist>
+                    </div>
+                    <p class="L_p cli2"><a href="javascript:;">Classification industry <span id="span_html2">-</span></a></p>
+                    <div class="d_bottom">
+                        <volist name="industry" id="v">
+                        <if condition="$_GET['cid'] neq ''">
+                        <div class="act <if condition='$v[id] eq $_GET[hid]'>active</if>"><a href="/{$column_info[link]}/hid/{$v.id}/cid/{$_GET['cid']}.html">- {$v.name} <span>></span></a></div>
+                        <else />
+                         <div class="act <if condition='$v[id] eq $_GET[hid]'>active</if>"><a href="/{$column_info[link]}/hid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                         </if>
+                     </volist>
+                    </div>
+                    <!-- <img src="images/icon/jh.png" alt="40x40"> -->
+                    <p class="L_p cli3"><a href="javascript:;">Classification by size <span id="span_html3">-</span></a></p>
+                     <div class="d_size">
+                    <volist name="size" id="v">
+                        <if condition="$_GET['hid'] neq ''">
+                        <div class="act <if condition='$v[id] eq $_GET[cid]'>active</if>"><a href="/{$column_info[link]}/hid/{$_GET['hid']}/cid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                        <else />
+                           <div class="act <if condition='$v[id] eq $_GET[cid]'>active</if>"><a href="/{$column_info[link]}/cid/{$v.id}.html">- {$v.name} <span>></span></a></div>
+                         </if>
+                     </volist>
+                     </div>
+                </div>
+             <include file="Public:left" />
+            </div>
+            <div class="div d_right">
+                <include file="Public:bread" />
+                <div class="d_cli1 div_cent">
+                    <div class="row pad_20 details">
+                        <div class="col-xs-12 col-md-12 D_block">                       
+                            <div id="tsShopContainer">
+                            <if condition="$info[img_list][0] neq ''">
+                                <div id="tsImgS" >
+                                    <a href="{$info[img_list][0][src_img]}" class="MagicZoom" id="MagicZoom" style="position: relative; display: block; outline: 0px; text-decoration: none; width: 355px;height:355px;">
+                                        <img class="img_sr" width="355" height="355" src="{$info[img_list][0][src_img]}" id="sim989902">
+                                        <div id="bc989902" class="MagicZoomBigImageCont" style="width: 355px; height: 355px; left: -10000px; top: 0px; overflow: hidden; z-index: 100; visibility: hidden; position: absolute; display: block;">
+                                            <div style="overflow: hidden;">
+                                                <img class="img_src2" src="{$info[img_list][0][src_img]}" style="position: relative; left: -87.89px; top: -260.688px; display: block; visibility: visible;">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <else />
+                            <div id="tsImgS" >
+                                    <a href="{$info.list_img}" class="MagicZoom" id="MagicZoom" style="position: relative; display: block; outline: 0px; text-decoration: none; width: 355px;height:355px;">
+                                        <img class="img_sr" width="355" height="355" src="{$info.list_img}" id="sim989902">
+                                        <div id="bc989902" class="MagicZoomBigImageCont" style="width: 355px; height: 355px; left: -10000px; top: 0px; overflow: hidden; z-index: 100; visibility: hidden; position: absolute; display: block;">
+                                            <div style="overflow: hidden;">
+                                                <img class="img_src2" src="{$info.list_img}" style="position: relative; left: -87.89px; top: -260.688px; display: block; visibility: visible;">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </if>    
+                            </div>
+                            <div class="Di relat">
+                                <div class="content inner-cent">
+                                     <div class="main">
+                                        <div class="prodetail">
+                                          <div  class="dt-show">
+                                          <if condition="$info[img_list][0] neq ''">
+                                            <div class="s-lt"> 
+                                             <volist name="info.img_list" id="v">
+                                               <a href="javascript:;"><img id="I_src" src="{$v.src_img}" alt=""></a>
+                                            </volist>
+                                           </div>
+                                           <else />
+                                          <div class="s-lt"> 
+                                               <a href="javascript:;"><img id="I_src" src="{$info.list_img}" alt=""></a>
+
+                                           </div>
+                                           </if>
+                                            <div class="s-rt">
+                                              <h3>{$info.name}</h3>
+                                              {$info.sub_content}
+                                              <div class="s-slide">
+                                                <div class="s-pic">
+                                                  <ul id="U_img_">
+                                                  <volist name="info.img_list" id="v">
+                                                    <li><a href="javascript:;"><img src="{$v.src_img}" alt=""></a>
+                                                    </li>
+                                                    </volist>
+                                                  </ul>
+                                                </div>
+                                                <div class="prev">&lt;</div>
+                                                <div class="next">&gt;</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="pro-intro">
+        <ul class="pro-intro-tab">
+          <li class="current">Detailed introduction</li>
+        </ul>
+        <div class="pro-intro-txt" style="display:block">
+         {$info.content}
+
+        </div>
+      </div>
+                                        </div>
+                                      </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                     
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+ 
+    </section>
+
+   
+    <script>
+
+    var swiper = new Swiper('#swiper04', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        freeMode: true,
+        // loop:true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    $().ready(function(){
+              $('.MagicZoomBigImageCont').find('div').find('img').attr('src',$("#I_src")[0].src)
+    })
+
+          $('#U_img_').find('img').mouseover(function(){
+            var _index = $(this).index();
+            // console.log(this)
+            // console.log($(this).attr("src"))
+              var path = $(this).attr("src");
+              // console.log($("#I_src")[0].src)
+              // $("#img_src").attr('src',path); 
+              $('.img_sr').attr('src',path) 
+              $('.MagicZoomBigImageCont').find('div').find('img').attr('src',path)
+              $('.img_src2').attr('src',path)
+              console.log(path)
+            })
+    </script>
+<include file="Public:bottom" />

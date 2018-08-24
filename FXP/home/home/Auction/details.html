@@ -1,0 +1,99 @@
+<include file="Public:header" />
+<script type="text/javascript" src="__STYLE__/home/js/tupianfangda.js" ></script>
+<script type="text/javascript" src="__STYLE__/home/css/detail.css" ></script>
+		<!--拍卖展览-->
+		<div class="content_box">
+			<include file="Public:bread" />
+			<div class="page_con page_details">
+				<div class="commodity">
+					<div class="commodity_one">
+						<h4 style="margin:0 0 0 40px"><span>藏品介绍</span>Product  Description</h4>
+						<div class="fl commimg cpzs_details" style="border:0;margin-left: 40px;">
+							<div class="ke_m2con">
+							  <div class="ke_m2pc_l">
+							  
+							     <div id="ink_showImg">
+							        <div class="small_pic">
+							            <span class="mark"></span>
+							            <span class="float_layer" style="display: none; left: 32px; top: 146px;"></span>
+							             <if condition="$info['img_list']">
+                          <img src="{$info['img_list'][0]['src_img']}" alt="" style="display: inline;">
+                          <else />
+                          <img src="{$info.list_img}" alt="" style="display: inline;">
+                          </if>
+							       </div>
+							       <div class="big_pic" style="display: none;">
+							              <if condition="$info['img_list']">
+                          <img src="{$info['img_list'][0]['src_img']}" alt="" style="left: -55.4331px; top: -285px;">
+                           <else />
+                            <img src="{$info.list_img}" alt="" style="left: -55.4331px; top: -285px;">
+                            </if>
+							       </div>
+							     </div>
+							
+							    <div class="ke_m2pcl_c2">
+							      <if condition="$info['img_list']"><div class="ke_m2pc_btn1"><img src="__STYLE__/home/img/left1.png" width="15" height="44" style="border:0;"></div></if>
+							      <div class="ke_m2pc_con">
+							        <ul style="width:360px;">
+							        <volist name="info.img_list" id="v">
+							          <li><img alt="" class="ink_smlImg" src="{$v.src_img}" width="66" height="46"><span class="hidden"><img src="{$v.src_img}"></span></li>
+							       </volist>
+							        </ul>
+							      </div>
+							      <if condition="$info['img_list']"><div class="ke_m2pc_btn2"><img src="__STYLE__/home/img/right1.png" width="15" height="44" style="border:0;"></div></if>
+							    </div>
+							  </div>
+							  <div class="clear"></div>
+							</div>
+						</div>
+						<div class="fl commo_detail cpzs_det">
+								<h2>{$info.name}</h2>
+							<p>估&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价：  <span>{$info.gujia}RMB</span></p>
+							<if condition="$info['chengjiaojia']">
+							<p>成&nbsp;&nbsp;交&nbsp;&nbsp;&nbsp;价：  <span>{$info.chengjiaojia}RMB</span></p></if>
+							<p>尺寸(CM)：  {$info.chicun}</p>
+							<p>作者/年代：  {$info.zuozhe}</p>
+							<p>材&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;质：  {$info.caizhi}</p>
+							<p>货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：  {$info.huohao}</p>
+							<p>规格（长*宽*高）： {$info.guige}</p>
+							<p>工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;艺：   {$info.gongyi}</p>
+							  <div class="share">分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;享：   
+                <div class="bshare-custom" style="display:inline-block"><div class="bsPromo bsPromo2"></div><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+              </div>
+						</div>
+					</div>
+					<div class="commodity_two">
+						<h3>作品说明</h3>
+						<p>{$info.content}</p>
+					</div>
+				</div>
+			</div>
+			<div class="beafo">
+            <a href="{$prev_info.url}"> &lt; 前一个</a><a href="{$next_info.url}">后一个 &gt; </a>
+          </div>
+			<div class="paipin_tit">其他拍品</div>
+			<div class="page_con" style="padding:0;">
+				<div class="picScroll-left">
+					<div class="bd">
+						<ul class="picList">
+						<volist name="case_list" id="v">
+							<li>
+								<a href="{:U('Auction/details',array('id'=>$v['id']))}">
+								<div class="pic"><img src="__STYLE__/home/img/paipin_img.png" alt="{$v.name}" title="{$v.name}"/></div>
+								<div class="title">
+									<h5> {:msubstrge($v['name'],0,18,'utf-8')}</h5>
+									<!-- <p>目录号 : 202</p> -->
+									<p>估&nbsp;&nbsp;&nbsp;价：{$v.gujia}</p>
+									<p>成交价：{$v.chengjiaojia}RMB</p>
+								</div>
+								</a>
+							</li>
+							</volist>
+						</ul>
+						<a class="prev" href="javascript:void(0)"></a>
+						<a class="next" href="javascript:void(0)"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+<include file="Public:bottom" />

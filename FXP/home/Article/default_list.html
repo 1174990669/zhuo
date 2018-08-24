@@ -1,0 +1,69 @@
+<include file="Public:header" />
+
+    <style>
+        .section_one .d_img{position: relative;}
+        .section_one .d_img .div_absou{position: absolute;top:50px;left: 50%;z-index: 2;color: #1e50ae;font-weight: 600;}
+        .section_one .d_img .H_fff h3{font-weight: 600;color:#fff;font-family: "宋体";}
+        .section_one .d_img .H_fff h3:after{content:'';position:absolute;border-bottom: 1px solid #fff;bottom:-10px;width: 70px;left:50%;transform: translate(-50%);}
+        .section_one .top_24 .B_fff .p_bor{position: relative;border-bottom: 1px solid #eaeaea;color:#007ac3;font-weight: 600;height: 40px;line-height: 40px; }
+        .section_one .top_24 .B_fff .p_bor:after{content:'';position:absolute;width: 100px;bottom:0;height: 2px;background:#007ac3;left: 0; }
+        .section_one .top_24 .B_fff .div_product{}
+        .pagination>li{display: inline-block;}
+        .pagination>li>a, .pagination>li>span{border:none;}
+        .pagination>li>a:hover{background: #dab866;color:#fff;}
+        .pagination>li .active{background: #dab866;color:#fff;}
+        .section_one .top_24 .B_fff .div_product .Li_div{padding-top: 20px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI{display:inline-block;vertical-align: top;height: 130px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .wi_30{width:22%;}
+        .section_one .top_24 .B_fff .div_product .Li_div .wi_69{width:77%;border-bottom:1px dashed #eaeaea;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI h4{color:#fda102;padding-top:8px;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI p{color:#666;padding-top:8px;line-height: 26px;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;}
+        .section_one .top_24 .B_fff .div_product .Li_div .LI img{width:180px;height:130px;}
+
+    </style>
+ 
+    <section class="section_one">
+         <include file="Public:banner" />
+        <div class="container-fluid top_24 back_eee">
+            <div class="container">
+                 <include file="Public:bread" />
+                <div class="row clearfix bacl_fff">
+                    <div class="col-xs-12 col-md-2 pad_no hidden-xs">
+                        <div class="div_bor w_60">
+                           <volist name="left_navi" id="v">
+                            <p <if condition="$v['id'] eq $column_info['id']">class="Act"</if>><a href="{$v.url}">{$v.name} <span></span></a></p>
+                          </volist>
+                            <!--<img src="__STYLE__/home/images/us.jpg" alt="40x40">-->
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-10 B_fff">
+                        <div class="div_bor pad_Le">
+                            <p class="p_bor">{$column_info.name}</p>
+                        </div>
+                        <div class="div_product">
+                            <ul class="Ul_text">
+                            <volist name="article_list" id="v">
+                                <li class="Li_div">
+                                    <a href="{$v.url}">
+                                        <div class="LI wi_30 hidden-xs"><img src="{$v.list_img}" alt="{$v.name}"></div>
+                                        <div class="LI wi_69">
+                                            <h4>{$v.name}</h4>
+                                            <p>{$v.sub_content}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                             </volist>    
+                            </ul>
+                            <div id="div_hide" class="text-center">
+                                <ul class="pagination">
+                                   {$pagelist}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<include file="Public:bottom" />
+ 

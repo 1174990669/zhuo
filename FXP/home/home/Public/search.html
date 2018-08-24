@@ -1,0 +1,18 @@
+  <p>
+            <a href="javascript:;">热门搜索：</a>
+            <volist name="hottag" id="v">
+            <a href="{:U('Article/search')}?keywords={$v.name}">{$v.name}</a>&nbsp;
+            </volist>
+        </p>
+        <div>
+        <form action="{:U('Article/search')}" method="get" onsubmit="return check_fields()">
+            <select id="select" name="select">
+                <option value="1">药品</option>
+                <option value="2">医生</option>
+                <option value="3">资讯</option>
+            </select>
+            <input type="text" placeholder="输入您要搜索的内容" name="keywords">
+            <button type="submit">搜索</button>
+        </form>    
+        </div>
+

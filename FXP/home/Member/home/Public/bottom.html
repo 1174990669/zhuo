@@ -1,0 +1,135 @@
+   <footer class="footer">
+        <div class="container-fluid fixed">
+            <div class="container">
+                <p class="p_href">Friendship link:
+                <volist name="link_list" id="v">
+                <a href="{$v.url}" target="_blank">{$v.name}</a>
+                </volist>
+                </p>
+                <ul>
+                    <li><a href="/en">Home</a></li>
+                    <volist name="bottom_navi" id="v">
+                    <li><a href="{$v.url}">{$v.name}</a></li>
+                   </volist>
+                </ul>
+                <div class="pull-right"><img src="{:C('WEB_EWM')}" alt="#"><br/><span style="color:#d5d6d8;">Pay attention to the WeChat public number</span></div>
+              {:C('WEB_ICP')}
+
+            </div>
+        </div>
+    </footer>
+    
+            <div class="div_tel">
+                    <ul id="li_hover">
+                        <li><a href="/liuyan.html"><img src="__STYLE__/home/images/icon/liu.jpg" alt="40x40"></a></li>
+                        <li><a href="http://wpa.qq.com/msgrd?v=3&uin={:C('WEB_QQ')}&site=qq&menu=yes" target="_blank"><img src="__STYLE__/home/images/icon/q.jpg" alt="40x40"></a></li>
+                        <li><div id="D_tel" class="div_ab">{:C('WEB_PHONE')}</div><a href="#"><img src="__STYLE__/home/images/icon/dh.jpg" alt="40x40"></a></li>
+                        <li><a href="/lianxixianneng.html#dituContent"><img src="__STYLE__/home/images/icon/dz.jpg" alt="40x40"></a></li>
+                        <li id="back-to-top" style="display:none;height: 56px;overflow: hidden;"><a href="#" ><img src="__STYLE__/home/images/icon/sy.jpg" alt="40x40"></a></li>
+                    </ul>
+            </div>
+            <div class="d_form" >
+                <p>Online Message <img class="guan_img pull-right" src="__STYLE__/home/images/icon/guan.png" alt="40x40"></p>
+                <form action="{:U('Message/index')}" method="post">
+                  <p><img class="p_image" src="__STYLE__/home/images/icon/nam.jpg" alt="40x40"><input type="text" name="name" required="" placeholder="Full name"/></p>
+                  <p><img class="p_image" src="__STYLE__/home/images/icon/tel.jpg" alt="40x40"><input class="w_13" type="text" name="phone" placeholder="Telephone (Bi Tian)"/></p>
+                  <p><img class="p_image" src="__STYLE__/home/images/icon/qq.jpg" alt="40x40"><input type="text" name="email" required="" placeholder="mailbox"/></p>
+                  <p><img class="p_image" src="__STYLE__/home/images/icon/di.jpg" alt="40x40"> <input type="text" name="address" required="" placeholder="address"/></p>
+                  <!-- <p>留言内容：</p> -->
+                  <textarea name="content" required=""  placeholder="Message content:"></textarea>
+                  <input type="hidden" name="column_id" value="419">
+                  <div class="text-center"><input class="button" type="submit" value="Send out" /></div>
+                </form>
+            </div>
+    <script> 
+        $('#li_hover').find('li').mouseover(function(){
+            console.log(1)
+            var _index = $(this).index();
+            $(".d_right .d_cli1").eq(_index).show().siblings().hide();
+            $(this).addClass("active").siblings().removeClass("active");
+            $('.d_bottom').find('.act').removeClass('active')
+            $('.ul_tit').css('display','block')
+        })
+        $('#li_hover').mouseout(function(){
+                $('#li_hover').find('li').removeClass('active')
+            })
+
+        $('.guan_img').click(function(){
+            // console.log($('.w_13').val())
+            $('.d_form').hide()
+        })
+
+ 
+        var swiper = new Swiper('#swiper1', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+      
+       
+    </script>
+    <script type="text/javascript">
+//加入收藏
+function AddFavorite(sURL, sTitle) {
+
+    sURL = encodeURI(sURL);
+
+    try {
+
+        window.external.addFavorite(sURL, sTitle);
+
+    } catch (e) {
+
+    try {
+
+        window.sidebar.addPanel(sTitle, sURL, "");
+
+    } catch (e) {
+
+        alert("加入收藏失败,请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+
+        }
+
+    }
+}
+ goTop();
+function goTop(){
+    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+    $(function () {
+        $(window).scroll(function(){
+            if ($(window).scrollTop()>600){
+                $("#back-to-top").fadeIn(800);
+            }
+            else
+            {
+                $("#back-to-top").fadeOut(800);
+            }
+        });
+
+        //当点击跳转链接后，回到页面顶部位置
+        $("#back-to-top").click(function(){
+            $('body,html').animate({scrollTop:0},500);
+            return false;
+        });
+    });
+}
+$(".li_click>.li_pos").mouseover(function(){
+    var _index = $(this).index();
+    console.log(this)
+    $(this).find('.cata').css('display','block')
+});
+
+$(".li_click>.li_pos").mouseout(function(){
+    var _index = $(this).index();
+    $(this).find('.cata').css('display','none')
+});
+    </script>
+</body>
+</html>
